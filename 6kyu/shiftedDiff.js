@@ -28,3 +28,6 @@ function shiftedDiff(first,second){
     const n = (str.length - num) % str.length;
     return str.slice(n) + str.slice(0, n); 
 }
+
+// One liner:
+const shiftedDiff = (f,s) => return f.length === s.length ? (s+s).indexOf(f) : -1;
