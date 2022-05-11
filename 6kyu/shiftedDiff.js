@@ -30,4 +30,4 @@ function shiftedDiff(first,second){
 }
 
 // One liner:
-const shiftedDiff = (f,s) => return f.length === s.length ? (s+s).indexOf(f) : -1;
+const shiftedDiff = (f,s) => f.length === s.length ? (s+s).indexOf(f) : -1;
