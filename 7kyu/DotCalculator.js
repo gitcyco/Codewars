@@ -22,20 +22,10 @@ function dotCalculator (equation) {
     let a = eq[0].length;
     let b = eq[2].length;
     switch (eq[1]) {
-        case "+":
-          return ".".repeat(a+b);
-          break;
-        case "-":
-          return ".".repeat(a-b);
-          break;
-        case "*":
-          return ".".repeat(a*b);
-          break;
-        case "//":
-          return ".".repeat(a / b);
-          break;
-        default:
-          return '';
-          break;
+        case "+": return ".".repeat(a + b);
+        case "-": return ".".repeat(a - b);
+        case "*": return ".".repeat(a * b);
+        case "//": return ".".repeat(a / b);
+        default: return '';
     }
-  }
+}
