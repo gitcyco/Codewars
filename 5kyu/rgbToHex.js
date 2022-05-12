@@ -15,6 +15,6 @@
 // rgb(148, 0, 211) // returns 9400D3
 //
 // Answer:
-const rgb = (r, g, b) =>`${hex(r8b(r))}${hex(r8b(g))}${hex(r8b(b))}`.toUpperCase();
+const rgb = (r, g, b) =>`${hex(r8b(r))}${hex(r8b(g))}${hex(r8b(b))}`;
 const r8b = v => v < 0 ? 0 : v > 255 ? 255 : v;
-const hex = v => v.toString(16).padStart(2,0);
+const hex = v => v.toString(16).padStart(2,0).toUpperCase();
