@@ -21,4 +21,4 @@
 // const EITHER = "Either";
 //
 // Answer:
-const oddOrEven = n => (n == 1 || n%2 != 0) ? "Either" : (n / 2) % 2 ? "Odd" : "Even";
+const oddOrEven = n => n%2 ? "Either" : (n / 2) % 2 ? "Odd" : "Even";
