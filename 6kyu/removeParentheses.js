@@ -21,9 +21,6 @@
 //
 // Answer:
 function removeParentheses(s){
-    let newStr = s;
-    while(/\(([^\()]+)\)/.test(newStr)) {
-      newStr = newStr.replace(/\(([^\()]+)\)/g, '');
-    }
-    return newStr;
+  while(/\(([^\()]+)\)/.test(s)) s = s.replace(/\(([^\()]+)\)/g, '');
+  return s;
 }
