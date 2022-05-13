@@ -25,3 +25,6 @@ function findMissingLetter(array) {
     let arr = array.map(e=>e.charCodeAt(0));
     for(let i = 1; i < arr.length; i++) if(arr[i] - arr[i-1] != 1) return String.fromCharCode(arr[i]-1); 
 }
+
+//one liner:
+const findMissingLetter = array => String.fromCharCode(array.map(e=>e.charCodeAt(0)).find((e,i,ar)=> ar[i+1]-e !=1) + 1);
