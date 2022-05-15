@@ -10,4 +10,4 @@
 // Good Luck!
 //
 // Answer:
-const doubleChar = str => Array.from(str, (e)=>e+e).join('');
+const doubleChar = str => Array.from(str, e=>e+e).join('');
