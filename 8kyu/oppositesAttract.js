@@ -7,3 +7,6 @@
 //
 // Answer:
 const lovefunc=(f1, f2) => (f1%2 == 0 && f2%2 != 0) || (f1%2 != 0 && f2%2 == 0) ? true : false;
+
+// Short and simple
+const lovefunc=(f1,f2) => f1%2 !== f2%2;
