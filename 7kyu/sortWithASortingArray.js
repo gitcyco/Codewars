@@ -9,4 +9,4 @@
 // sort(['z', 'x', 'y'], [0, 2, 1]) => ['z', 'y', 'x']
 //
 // Answer:
-const sort = (init, sorts) => [...init].map((e,i)=>e= init[sorts.indexOf(i)]);
+const sort = (init, sorts) => [...init].map((e,i)=> e=init[sorts.indexOf(i)]);
