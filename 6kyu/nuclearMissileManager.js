@@ -10,4 +10,4 @@
 // Note: There are 5 missiles labeled i which is a number in {0, 1, 2, 3, 4}. The missile i should be launched after i seconds.
 
 // Answer:
-const launchAll = (lm, i = -1) => {for(let k = 0; k < 5; k++) setTimeout(() => lm(++i), k * 1000)};
+const launchAll = lm => {for(let i = 0; i < 5; i++) setTimeout(() => lm(i), i * 1000)};
