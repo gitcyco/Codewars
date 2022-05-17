@@ -17,6 +17,6 @@
 // Answer:
 function count(n){
     var x = true;
-    while(++x !== n)
+    while(++x !== n) continue;
     return x;
 }
