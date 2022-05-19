@@ -21,7 +21,7 @@ function add (a, b) {
     a = a.split('');
     b = b.split('');
     while (a.length || b.length || carry) {
-        carry += ~~a.pop() + ~~b.pop()
+        carry += (+a.pop() || 0) + (+b.pop() || 0);
         total = carry % 10 + total;
         carry = carry > 9;
     }
