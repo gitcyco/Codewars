@@ -20,12 +20,10 @@ function Node(data) {
 function sortedInsert(head, data) {
     let node = new Node(data);
     let current = prev = head;
-    if(!head) return node;
-    if(data < head.data) {
+    if(!head || data < head.data) {
         node.next = head;
         return node;
     }
-
     while(current) {
         if(current.data < data) {
         prev = current;
