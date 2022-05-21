@@ -22,14 +22,12 @@ function Node(data) {
   
 function insertSort(head) {
     let list = null;
-    let current = head;
-    while(current) {
-        list = sortedInsert(list, current.data);
-        current = current.next ? current.next : null;
+    while(head) {
+      list = sortedInsert(list, head.data);
+      head = head.next ? head.next : null;
     }
-return list;
+    return list;
 }
-  
   
 function sortedInsert(head, data) {
     let node = new Node(data);
