@@ -20,8 +20,6 @@
 //
 // Answer:
 function duplicates(array){
-    let count = 0;
-    let out = array.reduce((a,e) => (a[e] ? a[e]++ : a[e]=1,a) ,{})
-    Object.values(out).forEach(e => e > 1 ? count += Math.floor(e/2) : e)
-    return count;
+    let out = array.reduce((a,e) => (a[e] ? a[e]++ : a[e]=1,a) ,{});
+    return Object.values(out).reduce((a,e) => e > 1 ? a += Math.floor(e/2) : a, 0);
 }
