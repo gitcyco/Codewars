@@ -36,3 +36,4 @@ const orderWeight = strng =>
   strng.split(' ')
   .sort((a,b,d,e)=>(d = a.split('').reduce((ac,e) => ac+=+e ,0)) - (e = b.split('').reduce((ac,e)=>ac+=+e,0)) == 0 ?
   a.localeCompare(b) : d - e).join(' ');
+
