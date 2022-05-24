@@ -47,16 +47,6 @@ function createSecretHolder(secret) {
 
 
 
-// 6 kyu Fun with lists: countIf
-function countIf(head, p) {
-  if(!head) return 0;
-  let count = 0;
-  while(head) {
-    if(p(head.data)) count++;
-    head = head.next;
-  }
-  return count;
-}
 
 // 6 kyu Fun with lists: filter
 function filter(head, p) {
