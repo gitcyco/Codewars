@@ -2,16 +2,6 @@
 
 
 
-// 6 kyu Running Average
-function runningAverage() {
-  let count = 0;
-  let current = 0;
-  return (val) => {
-    current = (count * current + val) / ++count;
-    return Math.round(current * Math.pow(10, 2)) / Math.pow(10, 2);
-  }
-}
-
 // 6 kyu Sort the number sequence
 function sortSequence(sequence){
   
@@ -41,14 +31,6 @@ function sortSequence(sequence){
   // return [].concat.apply([], newArr);
 }
 
-// 6 kyu sum function
-const sum = (a,b) => (b == undefined) ? c => a+c : a+b;
-// function sum(a,b) {
-//   if(!b) return function(c) {
-//     return a+c;
-//   } 
-//   return a+b;
-// }
 
 function createSecretHolder(secret) {
   let val = secret;
