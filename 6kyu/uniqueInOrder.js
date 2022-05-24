@@ -10,11 +10,4 @@
 // uniqueInOrder([1,2,2,3,3])       == [1,2,3]
 //
 // Answer:
-const uniqueInOrder=function(it, current, result=[]){
-    for(let i = 0; i < it.length; i++) {
-      if(it[i] == current) continue;
-      result.push(it[i]);
-      current = it[i]
-    }
-    return result;
-}
+const uniqueInOrder = (it, c) => [...it].filter((e,i,a) => e==c ? false : (c=e));
