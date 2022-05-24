@@ -45,28 +45,6 @@ function createSecretHolder(secret) {
 }
 
 
-
-
-
-// 6 kyu Fun with lists: filter
-function filter(head, p) {
-  let newHead = null;
-  let current = head;
-  let prev = head;
-  if(!head) return null;
-  while(current) {
-    if(p(current.data)) {
-      if(!newHead) newHead = current;
-      prev = current;
-      current = current.next;
-    } else {
-      prev.next = current.next;
-      current = current.next;
-    }
-  }
-  return newHead;
-}
-
 // 6 kyu ASCII Fun #1: X- Shape
 function x(n){
   let mid = Math.ceil(n / 2);
