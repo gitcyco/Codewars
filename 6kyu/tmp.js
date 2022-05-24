@@ -1,31 +1,6 @@
 
-// 6 kyu Smallest Permutation
-function minPermutation(n) {
-  let arr = n.toString().split('').sort();
-  let negative = arr[0] === '-' ? arr.shift() : false;
-  if(arr[0] == '0') {
-    for(let i = 1; i < arr.length; i++) {
-      if (+arr[i] > 0) {
-        [arr[0], arr[i]] = [arr[i], arr[0]];
-        break;
-      } 
-    }
-  }
-  return negative ? 0 - parseInt(arr.join('')) : parseInt(arr.join(''));
-}
 
-// 6 kyu Give me a Diamond
-function diamond(num) {
-  if(!(num % 2) || num < 1) return null;
-  let output = [`${"*".repeat(num)}\n`];
-  for(let i = num - 2; i > 0; i -= 2) {
-    // console.log(`i: ${i} num-i: ${num - i}`);
-    output.push(`${' '.repeat((num-i) / 2)}${'*'.repeat(i)}\n`);
-    output.unshift(`${' '.repeat((num-i) / 2)}${'*'.repeat(i)}\n`);
-  }
-  // console.log(output);
-  return output;
-}
+
 
 // 6 kyu Running Average
 function runningAverage() {
