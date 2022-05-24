@@ -43,24 +43,6 @@ Function.prototype.pipe = function(v) {
   return v;
 }
 
-// 5 kyu Memoized Fibonacci
-const fibonacci = function(n, cache) {
-  if(!cache) cache = {};
-  if(cache[n]) return cache[n]; 
-  if(n < 2) return n;
-  return cache[n] = fibonacci(n-1, cache) + fibonacci(n-2, cache);
-}
-
-// 5 kyu String incrementer
-function incrementString (strng) {
-  let num = strng.match(/\d+$/g);
-  let text = strng.match(/[^\d+]/g);
-  num = num ? num.toString() : "0";
-  num = String(+num + 1).padStart(num.length, 0);
-  text = text ? text.join('').toString() : '';
-  return text+num;
-}
-
 // 5 kyu Least Common Multiple
 var lcm = function (...args) {
   return args.reduce((a,b) => (a * b) / gcd(a, b));
