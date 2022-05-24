@@ -44,13 +44,6 @@ function createSecretHolder(secret) {
     }
 }
 
-// 6 kyu Closures and Scopes
-function createFunctions(n) {
-  const callbacks = [];
-  for (let i=0; i<n; i++) callbacks.push(() => i);
-  return callbacks;
-}
-
 
 // 6 kyu Fun with lists: map
 function map(head, f) {
