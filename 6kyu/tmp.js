@@ -45,15 +45,6 @@ function createSecretHolder(secret) {
 }
 
 
-// 6 kyu Separating Strings
-function sepStr(str) {
-  let strArr = str.split(' ');
-  let maxLen = strArr.reduce((acc,e,i,arr) => acc = e.length > acc ? e.length : acc,0);
-  let outer = [...Array(maxLen)].map(e => '').map(e=> [...Array(strArr.length)].map(e=>''));
-  strArr.forEach((e,i)=> e.split('').forEach((x,j)=>outer[j][i] = x));
-  return outer;
-}
-
 // 6 kyuSometimes
 const sometimes = function(fn) {
 	let count = 0;
