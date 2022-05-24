@@ -9,4 +9,4 @@
 // Note: for the purposes of this kata you will assume that it is a square if its length and width are equal, otherwise it is a rectangle.
 //
 // Answer:
-const areaOrPerimeter = (l , w) => l===w ? l*w : 2 * l + 2 * w;
+const areaOrPerimeter = (l,w) => l==w ? l*w : 2*l + 2*w;
