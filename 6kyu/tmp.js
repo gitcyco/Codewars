@@ -45,30 +45,7 @@ function createSecretHolder(secret) {
 }
 
 
-// 6 kyu Fun with lists: map
-function map(head, f) {
-  if(!head) return null;
-  let newHead = new Node(f(head.data));
-  let current = head;
-  let mapped = newHead;
-  while(current.next) {
-    mapped.next = new Node(f(current.next.data));
-    mapped = mapped.next;
-    current = current.next;
-  }
-  return newHead;
-}
 
-
-// 6 kyu Fun with lists: reduce
-function reduce(head, f, init) {
-  if(!head) return init;
-  while(head) {
-    init = f(init, head.data);
-    head = head.next
-  }
-  return init;
-}
 
 // 6 kyu Fun with lists: countIf
 function countIf(head, p) {
