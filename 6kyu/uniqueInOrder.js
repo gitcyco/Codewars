@@ -10,4 +10,4 @@
 // uniqueInOrder([1,2,2,3,3])       == [1,2,3]
 //
 // Answer:
-const uniqueInOrder = (it, c) => [...it].filter((e,i,a) => e==c ? false : (c=e));
+const uniqueInOrder = (it, c) => [...it].filter((e) => e==c ? 0 : (c=e));
