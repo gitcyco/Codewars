@@ -45,18 +45,6 @@ function createSecretHolder(secret) {
 }
 
 
-// 6 kyu ASCII Fun #1: X- Shape
-function x(n){
-  let mid = Math.ceil(n / 2);
-  let outer = [...Array(n)].map(e => '□').map(e=> [...Array(n+1)].map(e=>'□'));
-  outer = outer.map(a=> a.map((e,i,arr) => i == arr.length - 1 ? `\n` : e));
-   for(let k = 0; k < mid; k++) {
-     outer[k][k] = outer[k][outer.length-1-k] = '■';
-     outer[outer.length-1-k][k] = outer[outer.length-1-k][outer.length-1-k] = '■';
-  }
-  return [].concat(...outer).join('').slice(0,-1);
-}
-
 // 6 kyu Separating Strings
 function sepStr(str) {
   let strArr = str.split(' ');
