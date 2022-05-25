@@ -23,4 +23,4 @@
 const searchNames = l => l.filter((e,i,a)=> e.includes("@") ? (a[i-1].startsWith(".") || a[i-1].endsWith(".")) : false);
 
 // A little shorter, using .match:
-const searchNames = l => l.filter((e,i,a)=> e.includes("@") ? a[i-1].match(/^\.|\.$/) : false);
+// const searchNames = l => l.filter((e,i,a)=> e.includes("@") ? a[i-1].match(/^\.|\.$/) : false);
