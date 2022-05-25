@@ -11,4 +11,4 @@
 // 'Alice Betty Catherine Davis' => 'Alice B. C. Davis'
 //
 // Answer:
-const initializeNames = name => name.split(' ').map((e,i,a)=> i != 0 && i < a.length-1 ? e=e[0]+'.' : e).join(' ');
+const initializeNames = name => name.split(' ').map((e,i,a)=> i && i < a.length-1 ? e=e[0]+'.' : e).join(' ');
