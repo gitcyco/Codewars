@@ -34,3 +34,30 @@ Plugboard=function(wires){
     }
     return this;
   }
+
+
+// 6 kyu Word search
+  function indexOf(words, target){
+    console.log(words, target);
+    let start = 0;
+    let targetStart = target.length - 1;
+    let targetEnd = target.length + 1;
+    let end = words.length - 1;
+    let mid = Math.floor((start + end) / 2);
+    console.log('before while, mid: ', mid);
+    while(words[mid].length != targetStart) {
+      //console.log('in while');
+      if(words[mid].length < targetStart) {
+        console.log('less than')
+        start = mid + 1;
+      } else {
+        console.log('greater than')
+        end = mid - 1;
+      }
+        mid = Math.floor((start + end) / 2);
+    }
+    console.log(words[mid]);
+      
+  //       return words.indexOf(target) // nah, i don't think so..
+    
+  }
