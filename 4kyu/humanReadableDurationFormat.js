@@ -36,36 +36,27 @@
 function formatDuration (secs) {
     if(secs<=0) return 'now';
     let arr = [];
-    let count = 0;
     const years = Math.floor(secs / 31536000);
     secs -= years * 31536000;
     if(years > 0) {
-      count++;
       years === 1 ? arr.push(`${years} year`) : arr.push(`${years} years`);
     }
-  
     const days = Math.floor(secs / 86400) % 365;
     secs -= days * 86400;
     if(days > 0) {
-      count++;
       days === 1 ? arr.push(`${days} day`) : arr.push(`${days} days`);
     }
-  
     const hours = Math.floor(secs / 3600) % 24;
     secs -= hours * 3600;
     if(hours > 0) {
-      count++;
       hours === 1 ? arr.push(`${hours} hour`) : arr.push(`${hours} hours`);
     }
-  
     const minutes = Math.floor(secs / 60) % 60;
     secs -= minutes * 60;
     if(minutes > 0) {
-      count++;
       minutes === 1 ? arr.push(`${minutes} minute`) : arr.push(`${minutes} minutes`);
     }
     if(secs > 0) {
-      count++;
       secs === 1 ? arr.push(`${secs} second`) : arr.push(`${secs} seconds`);
     }
     let out = '';
