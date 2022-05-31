@@ -15,6 +15,10 @@
 // 2 --> 3 + 5 = 8
 //
 // Answer:
+// Super simple:
+const rowSumOddNumbers = n => n**3;
+
+// Long and nested loops, terrible
 function rowSumOddNumbers(n) {
     let odd = 0;
     let cur = 1;
