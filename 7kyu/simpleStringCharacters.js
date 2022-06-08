@@ -12,10 +12,10 @@
 //
 // Answer:
 function solve(s){
-    return [
+    return s ? [
        s.match(/[A-Z]/g).length,
        s.match(/[a-z]/g).length,
        s.match(/[0-9]/g).length,
        s.match(/(_|\W)/g).length
-    ]
+    ] : s;
 }
