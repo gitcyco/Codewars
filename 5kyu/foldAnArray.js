@@ -27,15 +27,14 @@
 // 
 // Answer:
 function foldArray(arr, runs) {
-    let newArr = [...arr];
-    let pivot = Math.ceil(newArr.length / 2);
-    let left = [], right = [];
-    for(let i = 0; i < runs; i++) {
-      left = newArr.slice(0,pivot);
-      right = newArr.slice(pivot).reverse();
-      right.forEach((e,i) => left[i]+=e);
-      newArr = left;
-      pivot = Math.ceil(newArr.length / 2);
-    }
-    return newArr;
+  let newArr = [...arr];
+  let pivot = Math.ceil(newArr.length / 2);
+  let left = [], right = [];
+  for(let i = 0; i < runs; i++) {
+    left = newArr.slice(0,pivot);
+    newArr.slice(pivot).reverse().forEach((e,i) => left[i]+=e);
+    newArr = left;
+    pivot = Math.ceil(newArr.length / 2);
+  }
+  return newArr;
 }
