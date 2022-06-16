@@ -9,4 +9,4 @@
 //     No whitespaces / underscore
 //
 // Answer:
-const alphanumeric = string => string ? !(/[\s]|[^a-zA-Z0-9]/g.test(string)) : false;
+const alphanumeric = string => string ? !(/[^a-z0-9]/gi.test(string)) : false;
