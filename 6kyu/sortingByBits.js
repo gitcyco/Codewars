@@ -23,11 +23,10 @@
 //
 // Answer:
 function sortByBit(arr) {
-    return arr.sort((a,b) => {
-      let aBin = a.toString(2);
-      let bBin = b.toString(2);
-      if((aBin.match(/1/g)||[]).length === (bBin.match(/1/g)||[]).length) return a - b;
-      return (aBin.match(/1/g)||[]).length - (bBin.match(/1/g)||[]).length;
-    })
-    return arr;
+  return arr.sort((a,b) => {
+    let aLen = (a.toString(2).match(/1/g)||[]).length;
+    let bLen = (b.toString(2).match(/1/g)||[]).length;
+    return aLen === bLen ? a - b : aLen - bLen;
+  })
+  return arr;
 }
