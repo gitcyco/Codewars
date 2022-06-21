@@ -5,7 +5,8 @@
 // Fix the code to pass all the tests. Unfortunately, you can only modify ONE line of code :(
 // Rules
 // 
-//     Usually, the changes you make are limited to one line. Please don't complain that you can't write your own code, because this is a bugfix kata. Also, don't complain that the initial code is too messy. That's why you need to do the task ;-)
+//     Usually, the changes you make are limited to one line. Please don't complain that you can't write your own code, because this is a bugfix kata. 
+//     Also, don't complain that the initial code is too messy. That's why you need to do the task ;-)
 // 
 //     You can do the following operations:
 //         1 - Replace the existing characters.
