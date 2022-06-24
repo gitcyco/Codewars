@@ -31,7 +31,7 @@
 //     
 // Answer:
 function isLanguageDiverse(list) {
-    const obj = list.reduce((ac, e) => (ac[e.language] ? ac[e.language]++ : ac[e.language] = 1, ac), {})
+    const obj = list.reduce((ac, e) => (ac[e.language] ? ac[e.language]++ : ac[e.language] = 1, ac), {});
     const langs = Object.values(obj).sort((a, b) => b - a);
     return !langs.some(e => langs[0] / 2 > langs[langs.length - 1]);
 }
