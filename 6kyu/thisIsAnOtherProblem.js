@@ -58,18 +58,14 @@
 // Answer:
 class NamedOne {
     constructor(first, last) {
-        this._firstName = first;
-        this._lastName = last;
+        this.firstName = first;
+        this.lastName = last;
     }
-    set firstName(first) { this._firstName = first; }
-    get firstName() { return this._firstName; }
-    set lastName(last) { this._lastName = last; }
-    get lastName() { return this._lastName; }
     set fullName(full) {
         let arr = full.split(' ');
         if (!arr || arr.length !== 2) return;
-        this._firstName = arr[0];
-        this._lastName = arr[1];
+        this.firstName = arr[0];
+        this.lastName = arr[1];
     }
-    get fullName() { return this._firstName + ' ' + this._lastName; }
+    get fullName() { return this.firstName + ' ' + this.lastName; }
 }
