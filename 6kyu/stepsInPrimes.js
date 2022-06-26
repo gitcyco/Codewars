@@ -55,7 +55,6 @@ function isPrime(n) {
         }
         return true;
     } else return false;
-
 }
 
 function primeSeries(s, f) {
