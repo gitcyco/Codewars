@@ -2,7 +2,8 @@
 //
 // Task
 // 
-// You're given an array of integers a and two integers x and y. Count the number of elements in the array such that `x ≤ a[i] ≤ y, where i is the 0-based index of the element.
+// You're given an array of integers a and two integers x and y. 
+// Count the number of elements in the array such that `x ≤ a[i] ≤ y, where i is the 0-based index of the element.
 // Code Limit
 // 
 // Less than 48 characters.
