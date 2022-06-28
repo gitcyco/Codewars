@@ -69,11 +69,4 @@ const spiralize = function (size) {
 
 spiral(10);
 
-
-
 // console.log(arr1, arr2);
-
-// console.log(snail(arr7));
-
-
-// [1,2,3,4,5,10,16,21,26,25,24,23,22,17,11,6,7,8,9,15,20,19,18,12,14]
