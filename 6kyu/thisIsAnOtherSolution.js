@@ -56,10 +56,10 @@
 // Answer:
 class OnceNamedOne {
     constructor(first, last) {
-        this._firstName = first;
-        this._lastName = last;
+        this._f = first;
+        this._l = last;
     }
-    get fullName() { return this._firstName + ' ' + this._lastName; }
-    get firstName() { return this._firstName; }
-    get lastName() { return this._lastName; }
+    get fullName() { return this._f + ' ' + this._l; }
+    get firstName() { return this._f; }
+    get lastName() { return this._l; }
 }
