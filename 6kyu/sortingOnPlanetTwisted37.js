@@ -23,10 +23,6 @@
 //
 // Answer:
 function sortTwisted37(arr) {
-    let aS = bS = '';
-    return [...arr].sort((a, b) => {
-        aS = a.toString().split('').map(e => e == 7 ? 3 : e == 3 ? 7 : e).join('');
-        bS = b.toString().split('').map(e => e == 7 ? 3 : e == 3 ? 7 : e).join('');
-        return parseInt(aS) - parseInt(bS);
-    });
+    return [...arr].sort((a, b) => +a.toString().split('')
+        .map(e => e == 7 ? 3 : e == 3 ? 7 : e).join('') - +b.toString().split('').map(e => e == 7 ? 3 : e == 3 ? 7 : e).join(''));
 }
