@@ -44,17 +44,8 @@ function interpreter(code, iter, w, h) {
     const stack = [];
     let skip = false;
     const grid = Array(h).fill(0).map(e => Array(w).fill(0));
-    // console.log('code: ', code, 'iter: ', iter, 'HxW: ',h,w, 'Ingrid: ', grid);
-    while (true) {
+    while (numIter < iter && codePtr < code.length) {
         skip = false;
-        if (numIter >= iter) {
-            // console.log("numIter >= iter: ", numIter, iter);
-            break;
-        }
-        if (codePtr > code.length) {
-            // console.log("codePtr > code.length - 1: ", codePtr, code.length - 1);
-            break;
-        }
         switch (code[codePtr]) {
             case 'n':
                 yPtr = --yPtr < 0 ? h - 1 : yPtr;
@@ -97,7 +88,5 @@ function interpreter(code, iter, w, h) {
         codePtr++;
         if (!skip) numIter++;
     }
-    // let out = grid.map(e => e.join('')).join('\r\n');
-    // console.log("Outgrid:\n", grid, '\nout:\n',out);
     return grid.map(e => e.join('')).join('\r\n');
 }
