@@ -20,11 +20,12 @@
 //
 // Answer:
 function Robot() {
-    this.words = [];
+    this.words = "i already know the word thank you for teaching me do not understand input".split(' ');
 }
 
 Robot.prototype.learnWord = function (word) {
-    if (this.words.includes(word.toLowerCase())) return `I already know the word ${word}`;
+    if (word.split(' ').length > 1 || word.match(/[^a-zA-Z]/g, '') || !word) return 'I do not understand the input';
+    if (this.words.filter(e => e === word.toLowerCase()).length > 0) return `I already know the word ${word}`;
     this.words.push(word.toLowerCase());
     return `Thank you for teaching me ${word}`;
 }
