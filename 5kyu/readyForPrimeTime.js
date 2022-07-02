@@ -9,9 +9,7 @@
 // 11 => [2, 3, 5, 7, 11]
 //
 // Answer:
-function prime(num) {
-    return primeSeries(0, num);
-}
+const prime = n => primeSeries(0, n);
 
 function isPrime(n) {
     if (n === 3) return true;
