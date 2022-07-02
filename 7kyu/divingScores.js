@@ -20,4 +20,4 @@
 // scoreOfDive( [ 7, 7.5, 8, 7.5, 6, 7, 7 ], 3 )  =>  '64.50'
 //
 // Answer:
-const scoreOfDive = (s, t) => (s.sort((a, b) => a - b).slice(2, s.length - 2).reduce((ac, e) => ac + e, 0) * t).toFixed(2);
+const scoreOfDive = (s, t) => (s.sort((a, b) => a - b).slice(2, -2).reduce((ac, e) => ac + e, 0) * t).toFixed(2);
