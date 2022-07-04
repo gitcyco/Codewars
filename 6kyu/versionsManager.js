@@ -13,7 +13,8 @@
 //     major() - increase MAJOR by 1, set MINOR and PATCH to 0
 //     minor() - increase MINOR by 1, set PATCH to 0
 //     patch() - increase PATCH by 1
-//     rollback() - return the MAJOR, MINOR, and PATCH to their values before the previous major/minor/patch call, or throw an exception with the message "Cannot rollback!" if there's no version to roll back to
+//     rollback() - return the MAJOR, MINOR, and PATCH to their values before the previous 
+//                  major/minor/patch call, or throw an exception with the message "Cannot rollback!" if there's no version to roll back to
 //     release() - return a string in the format "{MAJOR}.{MINOR}.{PATCH}"
 // 
 // May the binary force be with you!
