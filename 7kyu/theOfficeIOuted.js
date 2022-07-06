@@ -16,7 +16,7 @@
 // Answer:
 function outed(meet, boss) {
   let tot = Object.keys(meet).length;
-  let out = Object.keys(meet).reduce((ac, e) => (ac += meet[e] === boss ? meet[e] * 2 : meet[e]), 0) / tot;
+  let out = Object.keys(meet).reduce((ac, e) => (ac += e === boss ? meet[e] * 2 : meet[e]), 0) / tot;
   if (out <= 5) return "Get Out Now!";
   return "Nice Work Champ!";
 }
