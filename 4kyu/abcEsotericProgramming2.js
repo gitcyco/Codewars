@@ -37,7 +37,8 @@
 // 
 //     The accumulator has an initial value of 0
 //     Each time ; is called, push the following string format to the debug array : `${accumulator}->${ASCII}`
-//     In order to make loops more useful, this kata differs from the original implementation regarding the behavior of the l command : each time you reach a l, you must erase it from the input and return to the start of the source code.
+//     In order to make loops more useful, this kata differs from the original implementation 
+//     regarding the behavior of the l command : each time you reach a l, you must erase it from the input and return to the start of the source code.
 // 
 // Example
 // 
