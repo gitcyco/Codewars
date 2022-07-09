@@ -2,7 +2,8 @@
 //
 // The odd and even numbers are fighting against each other!
 //
-// You are given a list of positive integers. The odd numbers from the list will fight using their 1 bits from their binary representation, while the even numbers will fight using their 0 bits. If present in the list, number 0 will be neutral, hence not fight for either side.
+// You are given a list of positive integers. The odd numbers from the list will fight using their 1 bits from their binary
+// representation, while the even numbers will fight using their 0 bits. If present in the list, number 0 will be neutral, hence not fight for either side.
 //
 // You should return:
 //
