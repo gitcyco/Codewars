@@ -75,5 +75,4 @@ function decode(bits) {
 }
 
 const getB = (a) => a.charCodeAt(0).toString(2).padStart(8, 0);
-const getD = (a) =>
-  !/1/g.test(a) ? "0" : !/0/g.test(a) ? "1" : a.match(/1/g).length > a.match(/0/g).length ? "1" : "0";
+const getD = (a) => ((a.match(/1/g) || []).length > (a.match(/0/g) || []).length ? "1" : "0");
