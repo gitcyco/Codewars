@@ -1,7 +1,6 @@
 // DESCRIPTION
 //
-//
 // Answer:
 function solution(input) {
-    return input;
+  return input;
 }
