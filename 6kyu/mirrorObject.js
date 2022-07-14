@@ -24,3 +24,8 @@ const mirror = (obj) => {
   Object.keys(obj).forEach((e) => (newObj[e] = e.split("").reverse().join("")));
   return newObj;
 };
+
+// crazy one liner:
+const mirror = (obj, newObj = {}) => (
+  Object.keys(obj).forEach((e) => (newObj[e] = e.split("").reverse().join(""))), newObj
+);
