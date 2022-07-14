@@ -33,7 +33,7 @@ function ascendDescend(len, min, max, out = "") {
     cur = min;
   inc = min === max ? 0 : 1;
   for (let i = 0; i < len; i++) {
-    out = out + String(cur);
+    out = out + cur;
     if (cur === max && inc === 1 && min !== max) inc = -1;
     else if (cur === min && inc === -1 && min !== max) inc = 1;
     cur += inc;
