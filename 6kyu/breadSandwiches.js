@@ -40,6 +40,7 @@ function slicesToName(n) {
 
 function nameToSlices(name) {
   if (!name || typeof name !== "string") return null;
+  const arr = name.toLowerCase().split(" ");
   if (arr.some((e) => e !== "sandwich" && e !== "bread")) return null;
   if (arr[0] === "bread") {
     if (arr.length < 2 || arr.slice(1).some((e) => e !== "sandwich")) return null;
