@@ -9,7 +9,6 @@
 // 999 --> "999"
 // 
 // Answer:
-123456*
        IDENTIFICATION DIVISION.
        PROGRAM-ID. 'number-to-string'.
        DATA DIVISION.
