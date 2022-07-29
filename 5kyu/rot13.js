@@ -7,9 +7,13 @@
 // Only letters from the latin/english alphabet should be shifted, like in the original Rot13 "implementation".
 //
 // Answer:
+// Submitted answer
 function rot13(str) {
   return str.replace(/[a-z]/gi, (e) => {
     return String.fromCharCode(((e.charCodeAt(0) - offset(e) + 13) % 26) + offset(e));
   });
-}
+
+// General purpose rotation:
+const rotX = (str, x) => str.replace(/[a-z]/gi, (e) => String.fromCharCode(((e.charCodeAt(0) - offset(e) + x) % 26) + offset(e));
+
 const offset = (s) => (s.toUpperCase() === s ? 65 : 97);
