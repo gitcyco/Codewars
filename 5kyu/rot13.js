@@ -14,6 +14,7 @@ function rot13(str) {
   });
 }
 // General purpose rotation:
-const rotX = (str, x) => str.replace(/[a-z]/gi, (e) => String.fromCharCode(((e.charCodeAt(0) - offset(e) + x) % 26) + offset(e));
+const rotX = (str, x) =>
+  str.replace(/[a-z]/gi, (e) => String.fromCharCode(((e.charCodeAt(0) - offset(e) + x) % 26) + offset(e)));
 
 const offset = (s) => (s.toUpperCase() === s ? 65 : 97);
