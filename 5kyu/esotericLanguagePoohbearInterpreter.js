@@ -40,7 +40,7 @@
 // Answer:
 function poohbear(code) {
   let tape = Array(30000).fill(0);
-  let memPtr = tape.length / 2;
+  let memPtr = Math.floor(tape.length / 2);
   let codePtr = 0;
   const stack = [];
   let clip = 0;
