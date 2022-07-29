@@ -12,7 +12,7 @@ function rot13(str) {
   return str.replace(/[a-z]/gi, (e) => {
     return String.fromCharCode(((e.charCodeAt(0) - offset(e) + 13) % 26) + offset(e));
   });
-
+}
 // General purpose rotation:
 const rotX = (str, x) => str.replace(/[a-z]/gi, (e) => String.fromCharCode(((e.charCodeAt(0) - offset(e) + x) % 26) + offset(e));
 
