@@ -8,8 +8,8 @@
 //
 // Answer:
 function rot13(str) {
-  return (a = str.replace(/[a-z]/gi, (e) => {
+  return str.replace(/[a-z]/gi, (e) => {
     if (e.toUpperCase() === e) return String.fromCharCode(((e.charCodeAt(0) - 65 + 13) % 26) + 65);
     return String.fromCharCode(((e.charCodeAt(0) - 97 + 13) % 26) + 97);
-  }));
+  });
 }
