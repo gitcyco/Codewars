@@ -45,7 +45,6 @@ function poohbear(code) {
   const stack = [];
   let clip = 0;
   let out = [];
-  let outChars = "";
 
   while (codePtr < code.length) {
     switch (code[codePtr]) {
