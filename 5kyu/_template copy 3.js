@@ -28,16 +28,16 @@
 //
 // The eleven possible commands in the Brainscrambler language:
 //
-//     + Increment the current number.
-//     - Decrement the current number.
-//     < Move the current number to the stack to the "left".
-//     > Move the current number to the stack to the "right".
-//     * Push a zero onto the current stack.
-//     ^ Pop the current number and discard it.
-//     # Rotate between stacks.
+//      + Increment the current number.
+//      - Decrement the current number.
+//      < Move the current number to the stack to the "left".
+//      > Move the current number to the stack to the "right".
+//      * Push a zero onto the current stack.
+//      ^ Pop the current number and discard it.
+//      # Rotate between stacks.
 //     , Input a number and push it to the current stack. This number will consist of the decimal digits
 //       immediatly to the right of the , character. After reading the number, the program resumes at the command to the right of the last digit.
-//     . Output the current number.
+//      . Output the current number.
 //     [ Enter the loop.
 //     ] Jump to the corresponding [ bracket if the current number is > 0.
 //
@@ -83,7 +83,7 @@ const Interpreter = function () {
         switch (code[codePtr]) {
           case "#":
             sIdx = ++sIdx % 3;
-            sPtr = stacks(sIdx);
+            sPtr = stacks[sIdx];
             break;
           case ">":
             memPtr++;
@@ -97,11 +97,31 @@ const Interpreter = function () {
             }
             break;
           case "+":
-            tape[memPtr] = ++tape[memPtr] % 256;
+            ++sPtr[sPtr.length - 1];
+            // tape[memPtr] = ++tape[memPtr] % 256;
             break;
           case "-":
-            tape[memPtr] = --tape[memPtr] < 0 ? 255 : tape[memPtr];
+            --sPtr[sPtr.length - 1];
+            // tape[memPtr] = --tape[memPtr] < 0 ? 255 : tape[memPtr];
             break;
+          case "*":
+            sPtr.push(0);
+            break;
+          case ".":
+            out.push(sPtr[sPtr.length - 1]);
+            break;
+          case "^":
+            sPtr.pop();
+            break;
+          case "<":
+            tmp = sIdx - 1 < 0 ? 2 : sIdx - 1;
+            stacks[tmp].push(sPtr.pop());
+            break;
+          case ">":
+            tmp = (sIdx + 1) % 3;
+            stacks[tmp].push(sPtr.pop());
+            break;
+
           case "c":
             clip = tape[memPtr];
             break;
