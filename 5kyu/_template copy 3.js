@@ -81,21 +81,6 @@ const Interpreter = function () {
 
       while (codePtr < code.length) {
         switch (code[codePtr]) {
-          case "#":
-            sIdx = ++sIdx % 3;
-            sPtr = stacks[sIdx];
-            break;
-          case ">":
-            memPtr++;
-            if (memPtr > tape.length - 1) tape.push(0);
-            break;
-          case "<":
-            memPtr--;
-            if (memPtr < 0) {
-              tape.unshift(0);
-              memPtr = 0;
-            }
-            break;
           case "+":
             ++sPtr[sPtr.length - 1];
             // tape[memPtr] = ++tape[memPtr] % 256;
@@ -103,6 +88,18 @@ const Interpreter = function () {
           case "-":
             --sPtr[sPtr.length - 1];
             // tape[memPtr] = --tape[memPtr] < 0 ? 255 : tape[memPtr];
+            break;
+          case "<":
+            tmp = sIdx - 1 < 0 ? 2 : sIdx - 1;
+            stacks[tmp].push(sPtr.pop());
+            break;
+          case ">":
+            tmp = (sIdx + 1) % 3;
+            stacks[tmp].push(sPtr.pop());
+            break;
+          case "#":
+            sIdx = ++sIdx % 3;
+            sPtr = stacks[sIdx];
             break;
           case "*":
             sPtr.push(0);
@@ -113,60 +110,7 @@ const Interpreter = function () {
           case "^":
             sPtr.pop();
             break;
-          case "<":
-            tmp = sIdx - 1 < 0 ? 2 : sIdx - 1;
-            stacks[tmp].push(sPtr.pop());
-            break;
-          case ">":
-            tmp = (sIdx + 1) % 3;
-            stacks[tmp].push(sPtr.pop());
-            break;
-
-          case "c":
-            clip = tape[memPtr];
-            break;
-          case "p":
-            tape[memPtr] = clip;
-            break;
-          case "P":
-            out.push(String.fromCharCode(tape[memPtr]));
-            break;
-          case "N":
-            out.push(tape[memPtr]);
-            break;
-          case "T":
-            tape[memPtr] = (tape[memPtr] * 2) % 256;
-            break;
-          case "Q":
-            tape[memPtr] = tape[memPtr] ** 2 % 256;
-            break;
-          case "U":
-            tape[memPtr] = Math.floor(Math.sqrt(tape[memPtr])) % 256;
-            break;
-          case "L":
-            tape[memPtr] = (tape[memPtr] + 2) % 256;
-            break;
-          case "I":
-            tape[memPtr] = --tape[memPtr] < 0 ? 255 : tape[memPtr];
-            tape[memPtr] = --tape[memPtr] < 0 ? 255 : tape[memPtr];
-            break;
-          case "V":
-            tape[memPtr] = Math.floor(tape[memPtr] / 2) % 256;
-            break;
-          case "A":
-            tape[memPtr] = (tape[memPtr] + clip) % 256;
-            break;
-          case "B":
-            let count = clip;
-            for (let i = 0; i < count; i++) {
-              tape[memPtr] = --tape[memPtr] < 0 ? 255 : tape[memPtr];
-            }
-            break;
-          case "Y":
-            tape[memPtr] = (tape[memPtr] * clip) % 256;
-            break;
-          case "D":
-            tape[memPtr] = Math.floor(tape[memPtr] / clip) % 256;
+          case ",":
             break;
 
           case "[":
