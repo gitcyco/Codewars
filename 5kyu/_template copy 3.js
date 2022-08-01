@@ -82,26 +82,30 @@ const Interpreter = function () {
       let stack = [];
       let num = "";
       let tmp = 0;
+      let pop;
       let codePtr = 0;
-      console.log(code, stacks, sPtr, sIdx);
 
       while (codePtr < code.length) {
         switch (code[codePtr]) {
           case "+":
-            ++sPtr[sPtr.length - 1];
-            // tape[memPtr] = ++tape[memPtr] % 256;
+            pop = sPtr.pop();
+            if (pop != undefined) sPtr.push(++pop);
+            else sPtr.push(0);
             break;
           case "-":
-            --sPtr[sPtr.length - 1];
-            // tape[memPtr] = --tape[memPtr] < 0 ? 255 : tape[memPtr];
+            pop = sPtr.pop();
+            if (pop != undefined) sPtr.push(--pop);
+            else sPtr.push(0);
             break;
           case "<":
+            pop = sPtr.pop();
             tmp = sIdx - 1 < 0 ? 2 : sIdx - 1;
-            stacks[tmp].push(sPtr.pop());
+            if (pop != undefined) stacks[tmp].push(pop);
             break;
           case ">":
+            pop = sPtr.pop();
             tmp = (sIdx + 1) % 3;
-            stacks[tmp].push(sPtr.pop());
+            if (pop != undefined) stacks[tmp].push(pop);
             break;
           case "#":
             sIdx = ++sIdx % 3;
@@ -111,7 +115,7 @@ const Interpreter = function () {
             sPtr.push(0);
             break;
           case ".":
-            out.push(sPtr[sPtr.length - 1]);
+            if (sPtr[sPtr.length - 1] != undefined) out.push(sPtr[sPtr.length - 1]);
             break;
           case "^":
             sPtr.pop();
@@ -126,23 +130,11 @@ const Interpreter = function () {
                 break;
               }
             }
-            sPtr.push(+num);
+            if (+num >= 0) sPtr.push(+num);
+            num = "";
             break;
-
           case "[":
             stack.push(codePtr);
-            // } else {
-            // let counter = 0;
-            // while (true) {
-            //   codePtr++;
-            //   if (!code[codePtr]) break;
-            //   if (code[codePtr] === "[") counter++;
-            //   else if (code[codePtr] === "]") {
-            //     if (counter) counter--;
-            //     else break;
-            //   }
-            // }
-
             break;
           case "]":
             if (sPtr[sPtr.length - 1] > 0) {
@@ -152,7 +144,6 @@ const Interpreter = function () {
         } // end switch
         codePtr++;
       }
-
       return out.join("");
     },
   };
