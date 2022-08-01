@@ -130,23 +130,24 @@ const Interpreter = function () {
             break;
 
           case "[":
-            if (sPtr[sPtr.length - 1] != 0) {
-              stack.push(codePtr);
-            } else {
-              let counter = 0;
-              while (true) {
-                codePtr++;
-                if (!code[codePtr]) break;
-                if (code[codePtr] === "[") counter++;
-                else if (code[codePtr] === "]") {
-                  if (counter) counter--;
-                  else break;
-                }
-              }
-            }
+            stack.push(codePtr);
+            // } else {
+            // let counter = 0;
+            // while (true) {
+            //   codePtr++;
+            //   if (!code[codePtr]) break;
+            //   if (code[codePtr] === "[") counter++;
+            //   else if (code[codePtr] === "]") {
+            //     if (counter) counter--;
+            //     else break;
+            //   }
+            // }
+
             break;
           case "]":
-            codePtr = stack.pop() - 1;
+            if (sPtr[sPtr.length - 1] > 0) {
+              codePtr = stack.pop() - 1;
+            }
             break;
         } // end switch
         codePtr++;
