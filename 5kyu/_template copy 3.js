@@ -79,6 +79,10 @@ const Interpreter = function () {
   return {
     read: function (code) {
       let out = [];
+      let stack = [];
+      let num = "";
+      let tmp = 0;
+      let codePtr = 0;
       console.log(code, stacks, sPtr, sIdx);
 
       while (codePtr < code.length) {
@@ -113,10 +117,20 @@ const Interpreter = function () {
             sPtr.pop();
             break;
           case ",":
+            while (codePtr < code.length) {
+              tmp = parseInt(code[++codePtr]);
+              if (tmp >= 0) {
+                num += "" + tmp;
+              } else {
+                codePtr--;
+                break;
+              }
+            }
+            sPtr.push(+num);
             break;
 
           case "[":
-            if (tape[memPtr] != 0) {
+            if (sPtr[sPtr.length - 1] != 0) {
               stack.push(codePtr);
             } else {
               let counter = 0;
