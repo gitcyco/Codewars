@@ -10,6 +10,7 @@
 // min([1,2,3,4,5], 'index') // => 0
 //
 // Answer:
+// Single iteration answer:
 function min(arr, toReturn) {
   let sV = arr[0];
   let sI = 0;
@@ -22,3 +23,6 @@ function min(arr, toReturn) {
   if (toReturn == "value") return sV;
   return sI;
 }
+
+// One liner, multiple iterations
+const min = (a, r) => (r == "value" ? Math.min(...a) : a.indexOf(Math.min(...a)));
