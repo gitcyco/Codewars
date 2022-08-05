@@ -20,9 +20,7 @@
 // Answer:
 String.prototype.toAlternatingCase = function () {
   return this.replace(/[a-zA-Z]/g, (e) => {
-    console.log(e);
     let a = e.charCodeAt(0);
-    console.log(a);
     if (a > 64 && a < 91) return String.fromCharCode(a + 32);
     return String.fromCharCode(a - 32);
   });
