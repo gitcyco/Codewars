@@ -22,7 +22,6 @@ function multiply(n, l) {
     while (c-- > 0) {
       o += e;
     }
-    if (n < 0) o = -o;
-    return o;
+    return n < 0 ? -o : o;
   });
 }
