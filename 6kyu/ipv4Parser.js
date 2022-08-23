@@ -48,3 +48,9 @@ function ipv4Parser(ip, mask) {
   }
   return [net.join("."), host.join(".")];
 }
+
+// Short
+function ipv4Parser(i, m) {
+  const n = i.split(".").map((e, x) => e & m.split(".")[x]);
+  return [n.join("."), n.map((e, x) => e ^ i.split(".")[x]).join(".")];
+}
