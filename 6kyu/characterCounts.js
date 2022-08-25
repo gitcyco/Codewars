@@ -16,6 +16,6 @@
 // Answer:
 String.prototype.characterCount = function (chr) {
   const s = chr ? [...chr] : [];
-  const out = s.reduce((ac, e) => (ac.push((this.split(`${e}`) || []).length - 1), ac), []);
+  const out = s.reduce((ac, e) => (ac.push((this.split(e) || []).length - 1), ac), []);
   return !chr ? undefined : chr.length === 1 ? out[0] : out;
 };
