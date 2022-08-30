@@ -39,7 +39,7 @@
 //
 // Answer:
 function comp(a1, a2) {
-  const ar = a1 ? a1.map((e) => e * e).sort((a, b) => a - b) : a1;
+  a1 = a1 ? a1.sort((a, b) => a - b) : a1;
   a2 = a2 ? a2.sort((a, b) => a - b) : a2;
-  return a1 && a2 ? ar.every((e, i) => e == a2[i]) : false;
+  return a1 && a2 ? a1.every((e, i) => e * e == a2[i]) : false;
 }
