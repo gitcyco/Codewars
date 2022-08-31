@@ -20,12 +20,7 @@
 function generateHashtag(str) {
   if (!(str = str.trim().replace(/\s+/g, " "))) return false;
   if (str[0] === "#") str = str.splice(1);
-  str =
-    "#" +
-    str
-      .split(" ")
-      .map((e) => cap(e))
-      .join("");
+  str = "#" + str.split(" ").map(cap).join("");
   return str.length > 140 ? false : str;
 }
 
