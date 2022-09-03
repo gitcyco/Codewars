@@ -35,11 +35,6 @@
 // Answer:
 function topThreeWords(text) {
   const o = {};
-  let r = [
-    ["", 0],
-    ["", 0],
-    ["", 0],
-  ];
   text.toLowerCase().replace(/[a-z']+/gi, (e) => {
     if (/[a-z]/gi.test(e)) o[e] ? o[e]++ : (o[e] = 1);
   });
