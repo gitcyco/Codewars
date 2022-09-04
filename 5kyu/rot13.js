@@ -13,9 +13,12 @@ function rot13(str) {
     return String.fromCharCode(((e.charCodeAt(0) - offset(e) + 13) % 26) + offset(e));
   });
 }
-// General purpose rotation: (fix this to handle negative numbers)
+// General purpose rotation:
+// Fixed for arbitrary positive or negative values
 const rotX = (str, x) =>
-  str.replace(/[a-z]/gi, (e) => String.fromCharCode(((e.charCodeAt(0) - offset(e) + x) % 26) + offset(e)));
+  str.replace(/[a-z]/gi, (e) =>
+    String.fromCharCode((((x < 0 ? 26 : 0) + e.charCodeAt(0) - offset(e) + (x < 0 ? x % 26 : x)) % 26) + offset(e))
+  );
 
 const offset = (s) => (s.toUpperCase() === s ? 65 : 97);
 
