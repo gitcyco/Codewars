@@ -52,9 +52,6 @@ export function interpreter(code: string, tape: string): string {
                 }
                 break;
             case ']':
-                if(stack.length >= 0) {
-                  
-                }
                 let tmp: any = stack.pop();
                 if(tmp !== undefined) codePtr = tmp - 1;
                 break;
