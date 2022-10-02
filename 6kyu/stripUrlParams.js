@@ -25,11 +25,3 @@ function stripUrlParams(url, pts = []) {
   if (pArr.length > 0) return `${base}?${pArr.join("&")}`;
   return base;
 }
-
-MongoClient.connect(dbConnectionString, { useUnifiedTopology: true })
-  .then((client) => {
-    console.log(`Connected to Database`);
-    db = client.db(dbName);
-    //collection = db.collection('AOE42ndCollection')
-  })
-  .catch((err) => console.log(err));
