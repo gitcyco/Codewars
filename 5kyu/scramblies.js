@@ -17,12 +17,7 @@
 function scramble(str1, str2) {
   const c1Obj = str1.split("").reduce((a, e) => (a[e] ? a[e]++ : (a[e] = 1), a), {});
   const c2Obj = str2.split("").reduce((a, e) => (a[e] ? a[e]++ : (a[e] = 1), a), {});
-
-  return Object.keys(c2Obj).every((e) => {
-    if (c2Obj[e] <= c1Obj[e]) {
-      return true;
-    } else return false;
-  });
+  return Object.keys(c2Obj).every((e) => (c2Obj[e] <= c1Obj[e] ? true : false));
 }
 
 // Trying different methods below, all seem the same time complexity as the solution above.
