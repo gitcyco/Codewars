@@ -26,9 +26,7 @@ Array.prototype.sameStructureAs = function (other) {
   if (this.length !== other.length) return false;
   for (let i = 0; i < this.length; i++) {
     if (isArray(this[i])) {
-      if (!isArray(other[i])) return false;
-      if (this[i].sameStructureAs(other[i])) return true;
-      else return false;
+      return !isArray(other[i]) ? false : this[i].sameStructureAs(other[i]);
     }
   }
   return true;
