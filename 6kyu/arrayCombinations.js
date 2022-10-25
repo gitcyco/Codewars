@@ -11,5 +11,8 @@
 //
 // Good luck!
 //
-// Answer:
-const solve = (arr) => arr.reduce((a, e) => a * Array.from(new Set(e)).length, 1);
+// Answer: (first submission)
+// const solve = (arr) => arr.reduce((a, e) => a * Array.from(new Set(e)).length, 1);
+
+// shorter:
+const solve = (arr) => arr.reduce((a, e) => a * new Set(e).size, 1);
