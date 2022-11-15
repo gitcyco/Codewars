@@ -18,3 +18,11 @@ function arrayDiffVeryFast(a, b) {
   let fil = Array.from(new Set(b));
   return a.filter((e) => !fil.includes(e));
 }
+
+// using a hash map:
+function arrayDiffVeryFast_map(a, b) {
+  let s = Array.from(new Set(b));
+  let obj = {};
+  for (let e of s) obj[e] = true;
+  return a.filter((e) => !obj[e]);
+}
