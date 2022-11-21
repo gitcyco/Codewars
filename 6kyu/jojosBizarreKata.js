@@ -64,7 +64,8 @@ bonus points if you do both ;)*/
 /*Oh, and think about beginners: try to be informative and
 comment with some explanation for the sake of their learning!*/
 
-var regex = /regex/; //your regex here or...
+// regex only:
+const regex = /(^(jo|gio)[a-z].* ([a-z]* )*\2.*$)|(^jo[a-z].* ([a-z]* )*.*jo$)/gi; //your regex here or...
 
 // No regex brute force solution:
 function isJojo(name) {
