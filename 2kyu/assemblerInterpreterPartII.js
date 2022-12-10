@@ -99,9 +99,8 @@ function assemblerInterpreter(prg) {
   let arg;
   let comp;
 
-  let i = 0;
   // Main program loop:
-  while (i < 100) {
+  while (ptr < code.length) {
     let curIns = code[ptr][0];
     if (curIns !== "label" && curIns !== "msg") {
       arg = code[ptr][1].split(",");
@@ -180,7 +179,6 @@ function assemblerInterpreter(prg) {
         break;
     }
     if (++ptr > code.length - 1) break;
-    i++;
   }
   return -1;
 }
