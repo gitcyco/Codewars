@@ -37,7 +37,6 @@ function door(events) {
   let cur = 0;
   let dir = -1;
   let moving = 0;
-  let out = "";
 
   return events.split("").reduce((out, val) => {
     if (val === "P") {
