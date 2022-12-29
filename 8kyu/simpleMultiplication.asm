@@ -10,7 +10,6 @@ global simple_multiplication
 ; arg0         = (int64_t) The argument to multiply.
 ; return value = (int64_t) The result.
 simple_multiplication:
-;   xor rax, rax
   mov eax, edi
   test al, 1
   jnz odd_fn
