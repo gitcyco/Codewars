@@ -58,3 +58,28 @@ switch_it_up:
 
 .end
   ret
+
+
+; Alternate method, shorter, using array and pointers, and not a "switch like" syntax
+; 
+; SECTION .rodata
+; zero: db "Zero", 0
+; one: db "One", 0
+; two: db "Two", 0
+; three: db "Three", 0
+; four: db "Four", 0
+; five: db "Five", 0
+; six: db "Six", 0
+; seven: db "Seven", 0
+; eight: db "Eight", 0
+; nine: db "Nine", 0
+; ten: db "Ten", 0
+; 
+; number_arr: dq zero, one, two, three, four, five, six, seven, eight, nine, ten
+; 
+; SECTION .text
+; global switch_it_up
+; 
+; switch_it_up:
+;   mov rax, [number_arr + rdi * 8]
+;   ret
