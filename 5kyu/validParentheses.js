@@ -17,14 +17,10 @@
 function validParentheses(parens) {
   const stack = [];
   for (p of parens) {
-    switch (p) {
-      case "(":
-        stack.push(p);
-        break;
-      case ")":
-        let val = stack.pop();
-        if (val !== "(") return false;
-        break;
+    if (p === "(") stack.push(p);
+    else if (p === ")") {
+      let val = stack.pop();
+      if (val !== "(") return false;
     }
   }
   return stack.length > 0 ? false : true;
