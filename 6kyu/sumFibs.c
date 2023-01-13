@@ -20,9 +20,6 @@ unsigned long long sum_fibs(unsigned long long n)
     for (unsigned long i = 0; i < n + 1; i++)
     {
         r[i] = i == 0 || i == 1 ? i : r[i - 1] + r[i - 2];
-    }
-    for (unsigned long i = 0; i < n + 1; i++)
-    {
         if (r[i] % 2 == 0)
             sum += r[i];
     }
