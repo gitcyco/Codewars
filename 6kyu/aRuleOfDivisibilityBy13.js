@@ -56,6 +56,8 @@
 // thirt(321) calculates 48, 48 and returns 48
 //
 // Answer:
+//
+// Iterative:
 function thirt(n) {
   let key = [1, 10, 9, 12, 3, 4, 1];
   let prev = 0;
