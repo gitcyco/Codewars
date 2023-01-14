@@ -69,3 +69,14 @@ function thirt(n) {
   } while (prev !== n);
   return n;
 }
+
+// Recursive:
+function thirt_rec(n) {
+  let key = [1, 10, 9, 12, 3, 4, 1];
+  let val = n
+    .toString()
+    .split("")
+    .reverse()
+    .reduce((a, e, i) => (a += +e * key[i % 6]), 0);
+  return n === val ? n : thirt(val);
+}
