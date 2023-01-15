@@ -59,7 +59,7 @@
 package thirteen
 
 fun thirt(n:Long):Long {
-    val key: IntArray = intArrayOf(1, 10, 9, 12, 3, 4, 1);
+    val key: IntArray = intArrayOf(1, 10, 9, 12, 3, 4);
     val str: String = n.toString().reversed();
     var sum: Long = 0;
     for (i in 0..str.length-1) {
