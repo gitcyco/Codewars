@@ -59,7 +59,7 @@
 //
 // Iterative:
 function thirt(n) {
-  let key = [1, 10, 9, 12, 3, 4, 1];
+  let key = [1, 10, 9, 12, 3, 4];
   let prev = 0;
   do {
     let str = n.toString().split("").reverse();
@@ -74,7 +74,7 @@ function thirt(n) {
 
 // Recursive:
 function thirt_rec(n) {
-  let key = [1, 10, 9, 12, 3, 4, 1];
+  let key = [1, 10, 9, 12, 3, 4];
   let val = n
     .toString()
     .split("")
