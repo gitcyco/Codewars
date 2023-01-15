@@ -59,7 +59,7 @@
 using System;
 public class Thirteen {
     public static long Thirt(long n) {
-      int[] key = {1, 10, 9, 12, 3, 4, 1};
+      int[] key = {1, 10, 9, 12, 3, 4};
       int sum = 0;
       char[] charArray = n.ToString().ToCharArray();
       Array.Reverse(charArray);
