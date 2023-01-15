@@ -59,7 +59,7 @@
 //
 // Iterative:
 export function thirt(n: number): number {
-  let key: number[] = [1, 10, 9, 12, 3, 4, 1];
+  let key: number[] = [1, 10, 9, 12, 3, 4];
   let val: number = n.toString().split("").reverse().reduce((a, e, i) => (a += +e * key[i % 6]), 0);
   return n === val ? n : thirt(val);
 }
