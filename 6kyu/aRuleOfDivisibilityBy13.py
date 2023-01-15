@@ -58,7 +58,7 @@
 # Answer:
 def thirt(n):
     sum = 0
-    key = [1, 10, 9, 12, 3, 4, 1]
+    key = [1, 10, 9, 12, 3, 4]
     nums = [int(i) for i in str(n)[::-1]]
     for i in range(len(nums)):
         print(i)
