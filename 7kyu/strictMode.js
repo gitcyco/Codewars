@@ -11,4 +11,4 @@ const isInStrictMode = () =>
   })();
 
 // or super short:
-const isInStrictMode = () => !this;
+const isInStrictMode_s = () => !this;
