@@ -1,6 +1,8 @@
 {
   "files.associations": {
     "*.ejs": "html",
-    "stdlib.h": "c"
+    "*.asm": "assembly",
+    "stdlib.h": "c",
+    "inttypes.h": "c"
   }
 }
