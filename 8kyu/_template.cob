@@ -1,0 +1,13 @@
+      *DESCRIPTION
+      *
+      *Answer:
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. SIMPLE-MULTIPLICATION.
+       DATA DIVISION.
+       LINKAGE SECTION.
+       01 N           PIC 9(7).
+       01 RESULT      PIC 9(8).
+       PROCEDURE DIVISION USING N RESULT.
+          
+       END PROGRAM SIMPLE-MULTIPLICATION.
+      
