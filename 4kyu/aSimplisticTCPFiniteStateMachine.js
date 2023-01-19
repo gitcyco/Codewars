@@ -66,7 +66,7 @@ function traverseTCPStates(eventList) {
 }
 
 function initFSM() {
-  const fsm = {
+  return {
     CLOSED: {
       APP_PASSIVE_OPEN: "LISTEN",
       APP_ACTIVE_OPEN: "SYN_SENT",
@@ -110,5 +110,4 @@ function initFSM() {
       RCV_ACK: "CLOSED",
     },
   };
-  return fsm;
 }
