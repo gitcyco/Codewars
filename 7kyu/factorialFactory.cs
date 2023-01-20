@@ -15,7 +15,7 @@ public static class Kata
 {
   public static int Factorial(int n)
   {
-    if (n < 0) return 0;
+    if (n < 0) throw new Exception("error");
     if (n < 1) return 1;
     return n * Factorial(n - 1);
   }
