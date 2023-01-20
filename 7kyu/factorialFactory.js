@@ -14,3 +14,6 @@ function factorial(n) {
   if (n < 1) return 1;
   return n * factorial(n - 1);
 }
+
+// Single line:
+const factorial_s = (n) => (n < 0 ? null : n < 1 ? 1 : n * factorial(n - 1));
