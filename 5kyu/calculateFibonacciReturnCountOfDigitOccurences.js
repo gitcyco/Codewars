@@ -31,7 +31,7 @@
 function fibDigits(n) {
   let cache = {};
   if (n > 1000) {
-    for (let idx = 0; idx < n - 1000; idx += 1000) {
+    for (let idx = 0; idx < n - 500; idx += 500) {
       fibonacci(idx, cache);
     }
   }
