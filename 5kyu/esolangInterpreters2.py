@@ -28,30 +28,21 @@ def interpreter(code, tape):
     stack = []
     
     while not (memPtr < 0 or memPtr > len(tape) - 1 or codePtr > len(code) - 1):
-        if code[codePtr] == '>':
-            memPtr += 1
-        elif code[codePtr] == '<':
-            memPtr -= 1
-        elif code[codePtr] == '*':
-            tape[memPtr] ^= 1
-        elif code[codePtr] == '[':
-            if tape[memPtr] == 1:
-                stack.append(codePtr)
+        if code[codePtr] == '>': memPtr += 1
+        elif code[codePtr] == '<': memPtr -= 1
+        elif code[codePtr] == '*': tape[memPtr] ^= 1
+        elif code[codePtr] == '[': 
+            if tape[memPtr] == 1: stack.append(codePtr)
             else:
                 counter = 0
                 while True:
                     codePtr += 1
-                    if not code[codePtr]:
-                        break
-                    if code[codePtr] == '[':
-                        counter += 1
+                    if not code[codePtr]: break
+                    if code[codePtr] == '[': counter += 1
                     elif code[codePtr] == ']':
-                        if counter > 0:
-                            counter -= 1
-                        else:
-                            break
-        elif code[codePtr] == ']':
-            codePtr = stack.pop() - 1
+                        if counter > 0: counter -= 1
+                        else: break
+        elif code[codePtr] == ']': codePtr = stack.pop() - 1
         codePtr += 1
     
     return ''.join(str(e) for e in tape)
