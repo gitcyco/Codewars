@@ -8,7 +8,6 @@
 //
 // Iterative brute force solution:
 function mygcd(x, y) {
-  return y == 0 ? x : mygcd(y, x % y);
   let a = x >= y ? x : y;
   let b = x > y ? y : x;
   if (a / b == parseInt(a / b)) return b;
