@@ -9,4 +9,4 @@
 // Tests round answers to 6 decimal places.
 //
 // Answer:
-const distanceBetweenPoints = (a, b) => Math.sqrt(Math.abs(a.x - b.x) ** 2 + Math.abs(a.y - b.y) ** 2);
+const distanceBetweenPoints = (a, b) => Math.sqrt((a.x - b.x) ** 2 + (a.y - b.y) ** 2);
