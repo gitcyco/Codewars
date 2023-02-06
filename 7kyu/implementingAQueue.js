@@ -63,3 +63,30 @@ class Queue_class_array {
     return this.queue.length;
   }
 }
+
+// Class syntax using objects, O(1):
+class Queue {
+  constructor() {
+    this.length = 0;
+    this.queue = {};
+    this.head = 0;
+    this.tail = 0;
+  }
+  size() {
+    return this.length;
+  }
+  enqueue(item) {
+    this.queue[this.tail] = item;
+    this.tail++;
+    this.length++;
+  }
+  dequeue() {
+    if (this.length > 0) {
+      this.length--;
+      let val = this.queue[this.head];
+      delete this.queue[this.head];
+      this.head++;
+      return val;
+    }
+  }
+}
