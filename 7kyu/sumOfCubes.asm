@@ -14,8 +14,8 @@ global sumcubes
 
 ; <-- RAX sumcubes(DI n) -->
 sumcubes:
-    xor rax, rax        ; RAX <- the result
-    xor rbx, rbx        ; rbx holds the running sum
+  xor rax, rax        ; RAX <- the result
+  xor rbx, rbx        ; rbx holds the running sum
 
 loop:
   mov rax, rdi          ; copy the current value at rdi to rax
