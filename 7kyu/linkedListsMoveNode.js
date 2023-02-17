@@ -43,9 +43,7 @@ function Context(source, dest) {
 }
 
 function moveNode(source, dest) {
-  console.log(source, dest);
   if (!source) throw new Error("error");
-
   if (!dest) {
     dest = new Node(source.data);
   } else {
