@@ -13,7 +13,17 @@ function Node(data) {
   this.next = null;
 }
 
-function reverse(head) {
+// Single function
+function reverse(head, prev = null) {
+  if (!head) return head;
+  let next = head.next ? head.next : null;
+  head.next = prev;
+  if (!next) return head;
+  return reverse(next, head);
+}
+
+// Internal recursive function
+function reverse_func(head) {
   if (!head || !head.next) return head;
 
   const recurse = (cur, prev, next = null) => {
