@@ -16,11 +16,11 @@ function Node(data) {
 function reverse(head) {
   if (!head || !head.next) return head;
 
-  const reverse = (cur, prev, next = null) => {
+  const recurse = (cur, prev, next = null) => {
     if (cur.next) next = cur.next;
     cur.next = prev;
     if (!next) return cur;
-    return reverse(next, cur);
+    return recurse(next, cur);
   };
-  return reverse(head, null);
+  return recurse(head, null);
 }
