@@ -32,7 +32,7 @@
 // Answer:
 function countVegetables(str) {
   let key = ["cabbage", "carrot", "celery", "cucumber", "mushroom", "onion", "pepper", "potato", "tofu", "turnip"];
-  let obj = str;
+  let obj = str
     .split(" ")
     .filter((e) => key.includes(e))
     .reduce((a, e) => (e in a ? a[e]++ : (a[e] = 1), a), {});
