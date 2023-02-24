@@ -20,7 +20,7 @@
 //
 // Answer:
 function sqrtApproximation(num) {
-  if (num === 0 || num === 1) return num;
+  if (num < 2) return num;
   let min = 1;
   let max = num;
   let mid = Math.floor(num / 2);
