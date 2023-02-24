@@ -21,5 +21,5 @@
 //
 // Answer:
 function smile(text) {
-  return text.replace(/[:;=][-~]?[\(\[]/gi, (e) => e.replace("(", ")").replace("[", "]"));
+  return text.replace(/[:;=][-~]?[\[\(]/gi, (e) => e.replace("(", ")").replace("[", "]"));
 }
