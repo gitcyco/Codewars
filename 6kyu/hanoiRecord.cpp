@@ -21,3 +21,9 @@ unsigned long long hanoi(unsigned disks)
 {
     return pow(2, disks) - 1;
 }
+
+// using shift:
+unsigned long long hanoi_shift(unsigned disks)
+{
+    return (1 << disks) - 1;
+}
