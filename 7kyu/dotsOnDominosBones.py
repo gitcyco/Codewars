@@ -41,3 +41,6 @@ def dots_on_domino_bones(n):
     sum = (n * (n + 1)) // 2
     return sum + sum * (n + 1)
 
+# Shorter version:
+def dots_on_domino_bones_short(n):
+    return -1 if n < 0 else (n + 2) * (n + 1) * n // 2
