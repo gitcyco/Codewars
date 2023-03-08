@@ -41,3 +41,7 @@ function dots_on_domino_bones(n) {
   let sum = (n * (n + 1)) / 2;
   return sum + sum * (n + 1);
 }
+// shorter:
+function dots_on_domino_bones_shorter(n, nsum = (n * (n + 1)) / 2) {
+  return n < 0 ? -1 : nsum + nsum * (n + 1);
+}
