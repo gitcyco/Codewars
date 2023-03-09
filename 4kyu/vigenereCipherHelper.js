@@ -53,13 +53,10 @@ class VigenèreCipher {
     this.abc = abc;
   }
   encode(str) {
-    if (!str) return "";
-    return this.code(this.rot, str, this.abc);
+    return str ? this.codec(this.rot, str, this.abc) : "";
   }
   decode(str) {
-    if (!str) return;
-    let tmpKey = this.key.repeat(Math.ceil(str.length / this.key.length)).slice(0, str.length);
-    return this.code(this.unrot, str, this.abc);
+    return str ? this.codec(this.unrot, str, this.abc) : "";
   }
   rot(num, letter, abc) {
     let abcIdx = abc.indexOf(letter);
@@ -71,7 +68,7 @@ class VigenèreCipher {
     if (idx < 0) idx = abc.length - Math.abs(idx);
     return abc[idx];
   }
-  code(func, str, abc) {
+  codec(func, str, abc) {
     let tmpKey = this.key.repeat(Math.ceil(str.length / this.key.length)).slice(0, str.length);
     return str.replace(/./g, (e, i) => {
       if (abc.includes(e)) {
