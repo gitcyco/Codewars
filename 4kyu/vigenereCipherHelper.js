@@ -54,36 +54,30 @@ class VigenèreCipher {
   }
   encode(str) {
     if (!str) return "";
-    let tmpKey = this.key.repeat(Math.ceil(str.length / this.key.length)).slice(0, str.length);
-    str = str.replace(/./g, (e, i) => {
-      if (this.abc.includes(e)) {
-        let idx = this.abc.indexOf(tmpKey[i]);
-        return this.rot(idx, e);
-      } else return e;
-    });
-    return str;
+    return this.code(this.rot, str, this.abc);
   }
   decode(str) {
     if (!str) return;
     let tmpKey = this.key.repeat(Math.ceil(str.length / this.key.length)).slice(0, str.length);
-    str = str.replace(/./g, (e, i) => {
-      if (this.abc.includes(e)) {
-        let idx = this.abc.indexOf(tmpKey[i]);
-        return this.unrot(idx, e);
+    return this.code(this.unrot, str, this.abc);
+  }
+  rot(num, letter, abc) {
+    let abcIdx = abc.indexOf(letter);
+    let idx = (num + abcIdx) % abc.length;
+    return abc[idx];
+  }
+  unrot(num, letter, abc) {
+    let idx = abc.indexOf(letter) - num;
+    if (idx < 0) idx = abc.length - Math.abs(idx);
+    return abc[idx];
+  }
+  code(func, str, abc) {
+    let tmpKey = this.key.repeat(Math.ceil(str.length / this.key.length)).slice(0, str.length);
+    return str.replace(/./g, (e, i) => {
+      if (abc.includes(e)) {
+        let idx = abc.indexOf(tmpKey[i]);
+        return func(idx, e, abc);
       } else return e;
     });
-    return str;
-  }
-
-  rot(num, letter) {
-    let abcIdx = this.abc.indexOf(letter);
-    let idx = (num + abcIdx) % this.abc.length;
-    return this.abc[idx];
-  }
-
-  unrot(num, letter) {
-    let idx = this.abc.indexOf(letter) - num;
-    if (idx < 0) idx = this.abc.length - Math.abs(idx);
-    return this.abc[idx];
   }
 }
