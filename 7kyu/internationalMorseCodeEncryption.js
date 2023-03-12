@@ -17,7 +17,7 @@ const encryption = (msg) =>
     .map((e) =>
       e
         .split("")
-        .map((a) => CHAR_TO_MORSE[a])
+        .map((a) => a.replace(/[a-z0-9]/gi, (v) => CHAR_TO_MORSE[a]))
         .join(" ")
     )
     .join("   ");
