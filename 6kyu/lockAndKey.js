@@ -43,10 +43,7 @@ class Lock {
     this.#valid.push(obj);
     return obj;
   };
-  check = (obj) => {
-    if (this.#valid.includes(obj)) return true;
-    else return false;
-  };
+  check = (obj) => this.#valid.includes(obj);
   expire = (obj) => {
     let index = this.#valid.indexOf(obj);
     if (index !== -1) this.#valid.splice(index, 1);
