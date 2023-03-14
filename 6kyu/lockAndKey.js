@@ -40,7 +40,7 @@
 class Lock {
   #valid = [];
   createKey = () => {
-    let obj = { a: 1 };
+    let obj = {};
     this.#valid.push(obj);
     return obj;
   };
