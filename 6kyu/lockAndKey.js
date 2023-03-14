@@ -37,17 +37,18 @@
 //
 // Answer:
 class Lock {
-  #valid = {};
+  #valid = [];
   createKey = () => {
     let obj = {};
-    this.#valid[obj] = true;
+    this.#valid.push(obj);
     return obj;
   };
   check = (obj) => {
-    if (obj in this.#valid) return true;
+    if (this.#valid.includes(obj)) return true;
     else return false;
   };
   expire = (obj) => {
-    if (obj in this.#valid) delete this.#valid[obj];
+    let index = this.#valid.indexOf(obj);
+    if (index !== -1) this.#valid.splice(index, 1);
   };
 }
