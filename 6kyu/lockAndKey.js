@@ -35,7 +35,6 @@
 // var key2 = lock2.createKey();
 // lock1.check(key2); // false
 //
-
 // Answer:
 class Lock {
   #valid = {};
