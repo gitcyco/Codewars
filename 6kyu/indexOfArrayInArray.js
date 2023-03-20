@@ -32,8 +32,8 @@
 //
 // Answer:
 const searchArray = function (arr, query) {
-  if (!arr || arr.some((e) => !Array.isArray(arr) || e.length !== 2)) throw Error("invalid array");
-  if (!query || !Array.isArray(query) || query.length !== 2) throw Error("invalid query");
+  if (!arr || arr.some((e) => !Array.isArray(arr) || e.length !== 2)) throw new Error("invalid array");
+  if (!query || !Array.isArray(query) || query.length !== 2) throw new Error("invalid query");
   for (let i = 0; i < arr.length; i++) {
     if (JSON.stringify(arr[i]) === JSON.stringify(query)) return i;
   }
