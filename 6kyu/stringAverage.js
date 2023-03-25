@@ -10,6 +10,7 @@
 // Answer:
 function averageString(str) {
   let key = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+  if (!str || str.split(" ").some((e) => !key.includes(e))) return "n/a";
   if (str)
     return key[
       Math.floor(
@@ -19,5 +20,4 @@ function averageString(str) {
           .reduce((a, e) => a + e, 0) / str.split(" ").length
       )
     ];
-  return "n/a";
 }
