@@ -24,12 +24,10 @@ function x(n) {
   let max = n - 1;
   let mid = Math.floor(n / 2);
   for (let i = 0; i <= mid; i++) {
-    if (i < mid) {
-      arr[i][min] = 1;
-      arr[i][max] = 1;
-      arr[max][min] = 1;
-      arr[max][max] = 1;
-    } else arr[mid][mid] = 1;
+    arr[min][min] = 1;
+    arr[min][max] = 1;
+    arr[max][min] = 1;
+    arr[max][max] = 1;
     min++;
     max--;
   }
