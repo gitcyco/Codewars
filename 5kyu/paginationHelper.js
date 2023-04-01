@@ -37,7 +37,7 @@ class PaginationHelper {
     return this.count;
   }
   pageItemCount(pageIndex) {
-    // returns the number of items on the current page. page_index is zero based.
+    // returns the number of items on the current page. pageIndex is zero based.
     // this method should return -1 for pageIndex values that are out of range
     if (pageIndex > this.count - 1 || pageIndex < 0) return -1;
     if (pageIndex < this.count - 1) return this.numItems;
