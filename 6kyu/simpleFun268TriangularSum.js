@@ -49,3 +49,6 @@ function triangularSum(n) {
   }
   return false;
 }
+
+// Plain math:
+const triangularSum_m = (n) => Math.sqrt(2 * (Math.sqrt(8 * n + 1) - 1)) % 2 == 0;
