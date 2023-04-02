@@ -18,14 +18,14 @@
 //     if n is larger than values's length, use the length instead.
 //
 // Answer:
-const minimumSum = (values, n) =>
+const minimumSum = (vals, n) =>
   getSum(
-    [...values].sort((a, b) => a - b),
+    [...vals].sort((a, b) => a - b),
     n
   );
-const maximumSum = (values, n) =>
+const maximumSum = (vals, n) =>
   getSum(
-    [...values].sort((a, b) => b - a),
+    [...vals].sort((a, b) => b - a),
     n
   );
 const getSum = (arr, n) => arr.slice(0, n).reduce((a, e) => a + e);
