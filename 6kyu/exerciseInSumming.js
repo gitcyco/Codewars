@@ -18,21 +18,20 @@
 //     if n is larger than values's length, use the length instead.
 //
 // Answer:
-function minimumSum(values, n) {
-  values.sort((a, b) => a - b);
-  return getSum(values, n);
-}
-
-function maximumSum(values, n) {
-  values.sort((a, b) => b - a);
-  return getSum(values, n);
-}
+const minimumSum = (values, n) =>
+  getSum(
+    [...values].sort((a, b) => a - b),
+    n
+  );
+const maximumSum = (values, n) =>
+  getSum(
+    [...values].sort((a, b) => b - a),
+    n
+  );
 
 const getSum = (arr, n) => {
   let sum = 0;
   if (arr.length < n) n = arr.length;
-  for (let i = 0; i < n; i++) {
-    sum += arr[i];
-  }
+  for (let i = 0; i < n; i++) sum += arr[i];
   return sum;
 };
