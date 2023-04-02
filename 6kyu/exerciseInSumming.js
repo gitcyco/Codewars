@@ -28,4 +28,4 @@ const maximumSum = (vals, n) =>
     [...vals].sort((a, b) => b - a),
     n
   );
-const getSum = (arr, n) => arr.slice(0, n).reduce((a, e) => a + e);
+const getSum = (arr, n) => arr.slice(0, n).reduce((a, e) => a + e, 0);
