@@ -9,4 +9,4 @@
 // ["a", "a", "b", "b", "c", "a", "b", "c"]  =>  ["a", "b", "c", "a", "b", "c"]
 //
 // Answer:
-const uniq = (arr) => arr.filter((e, i, a) => e !== a[i - 1]);
+const uniq = (a) => a.filter((e, i) => e !== a[i - 1]);
