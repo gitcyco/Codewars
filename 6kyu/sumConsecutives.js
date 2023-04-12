@@ -22,7 +22,13 @@
 // [-5,-5,7,7,12,0] # should return [-10,14,12,0]
 //
 // Answer:
-function sumConsecutives(s) {
+
+// One line:
+const sumConsecutives = (s) =>
+  s.reduce((v, e, i, a) => (a[i] === a[i - 1] ? (v[v.length - 1] += a[i]) : v.push(e), v), []);
+
+// Long form:
+function sumConsecutives_long(s) {
   let sum = s[0];
   let arr = [];
   for (let i = 1; i < s.length; i++) {
