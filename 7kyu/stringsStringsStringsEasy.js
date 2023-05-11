@@ -53,8 +53,6 @@
 //
 // Answer:
 Number.prototype.toString = function () {
-  if (this === Math.PI) return "" + Math.PI;
-  if (this === Math.E) return "" + Math.E;
   return "" + this;
 };
 
