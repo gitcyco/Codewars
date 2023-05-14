@@ -32,7 +32,7 @@ class TreeNode {
     return node.left && node.right;
   }
   static hasNone(node) {
-    return !node.left && !node.left;
+    return !node.left && !node.right;
   }
 
   static leaf() {
