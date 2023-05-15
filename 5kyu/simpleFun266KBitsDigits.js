@@ -44,7 +44,8 @@
 //
 // Answer:
 function kBitsDigits(n, k) {
-  let max = parseInt("1".repeat(k > n ? n : k).padEnd(n, "0"), 2);
+  if (n < k) return [];
+  let max = parseInt("1".repeat(k).padEnd(n, "0"), 2);
   let out = [];
   for (let i = 0; i <= max; i++) {
     let oneBits = (i.toString(2).match(/1/gi) || []).length;
