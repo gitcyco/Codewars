@@ -15,3 +15,8 @@ fn plural (n: f64) -> bool {
   }
   return false;
 }
+
+// simplified
+fn plural_simple (n: f64) -> bool {
+  return n == 0f64 || n != 1f64;
+}
