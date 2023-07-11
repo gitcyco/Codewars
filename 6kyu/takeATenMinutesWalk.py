@@ -28,3 +28,7 @@ def is_valid_walk(walk):
         x = x + dirs[d] if d in xDirs else x 
         y = y + dirs[d] if d in yDirs else y 
     return x == 0 and y == 0
+
+# short:
+def is_valid_walk(walk):
+    return walk.count('n') == walk.count('s') and walk.count('e') == walk.count('w') and len(walk) == 10
