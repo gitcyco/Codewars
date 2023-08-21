@@ -34,6 +34,6 @@ eliminate_unset_bits:
 
 skip:
     mov rax, 1            ; Start with binary '00000001'
-    shl rax, cl           ; out count of 1's is in the rcx, register, use cl to shift left
+    shl rax, cl           ; our count of 1's is in the rcx, register, use cl to shift left
     sub rax, 1            ; turn '10000000' into '1111111' (subtract one after 2**cl)
     ret
