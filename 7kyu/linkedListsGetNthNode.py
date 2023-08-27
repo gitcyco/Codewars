@@ -30,13 +30,6 @@ def get_nth(node, index):
     raise Exception('Error')
 
 # Alternate: 
-from preloaded import Node
-
-# class Node(object):
-#     """Node class for reference"""
-#     def __init__(self, data, next=None):
-#         self.data = data
-#         self.next = next
     
 def get_nth_alt(node, index):
     if index < 0 or not node:
