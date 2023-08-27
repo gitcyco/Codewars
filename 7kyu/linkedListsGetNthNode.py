@@ -28,3 +28,21 @@ def get_nth(node, index):
     if node:
         return node
     raise Exception('Error')
+
+# Alternate: 
+from preloaded import Node
+
+# class Node(object):
+#     """Node class for reference"""
+#     def __init__(self, data, next=None):
+#         self.data = data
+#         self.next = next
+    
+def get_nth_alt(node, index):
+    if index < 0 or not node:
+        raise Exception('Error')
+    for i in range(0, index):
+        node = node.next
+        if not node:
+            raise Exception('Error')
+    return node
