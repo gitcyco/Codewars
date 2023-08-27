@@ -38,3 +38,9 @@ function compare(a, b) {
     a.val === b.val && compare(a.left, b.left) && compare(a.right, b.right)
   );
 }
+
+// One statement, because who doesn't love even more hideous code:
+const compare_ = (a, b) =>
+  !a || !b
+    ? a == b
+    : a.val === b.val && compare(a.left, b.left) && compare(a.right, b.right);
