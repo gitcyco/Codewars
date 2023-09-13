@@ -3,6 +3,7 @@
     "*.ejs": "html",
     "*.asm": "assembly",
     "stdlib.h": "c",
-    "inttypes.h": "c"
+    "inttypes.h": "c",
+    "functional": "c"
   }
 }
