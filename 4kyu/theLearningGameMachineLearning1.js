@@ -28,13 +28,15 @@ class Machine {
   constructor() {
     this.map = {};
     this.lastAction = null;
-    this.actions = [
-      (num) => num + 1,
-      (num) => num * 0,
-      (num) => num / 2,
-      (num) => num * 100,
-      (num) => num % 2,
-    ];
+    this.actions = ACTIONS();
+    // Noted here for documentation sake:
+    // this.actions = [
+    //   (num) => num + 1,
+    //   (num) => num * 0,
+    //   (num) => num / 2,
+    //   (num) => num * 100,
+    //   (num) => num % 2,
+    // ];
   }
   command(cmd, num) {
     this.lastAction = cmd;
