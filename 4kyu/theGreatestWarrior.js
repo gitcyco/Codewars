@@ -103,12 +103,13 @@ class Warrior {
     let diff = enemyLevel - this.#currentLevel;
     if (enemyLevel < 1 || enemyLevel > 100) return "Invalid level";
     if (enemyRank - myRank > 0 && diff >= 5) return "You've been defeated";
-    if (diff === 0) this.#setExperience(10);
-    else if (diff === -1) this.#setExperience(5);
-    else if (diff < -1) this.#setExperience(0);
-    else this.#setExperience(20 * diff * diff);
-    if (diff < -1) return "Easy fight";
-    if (diff === 0 || diff === -1) return "A good fight";
+    if (diff <= 0) {
+      if (diff === 0) this.#setExperience(10);
+      else if (diff === -1) this.#setExperience(5);
+      else if (diff < -1) this.#setExperience(0);
+      if (diff < -1) return "Easy fight";
+      if (diff === 0 || diff === -1) return "A good fight";
+    } else this.#setExperience(20 * diff * diff);
     return "An intense fight";
   }
   #setExperience(exp) {
