@@ -91,21 +91,16 @@ def walk_back(prev, end_node, start_node):
         return [end_node]
     out = [end_node]
     next = prev[end_node]
-    while(next != start_node):
+    while next:
         out.append(next)
         next = prev[next]
-    out.append(start_node)
-    out.reverse()
-    return out
+    return out[::-1]
 
 def get_adj(grid, node:Node):
-    if len(grid) == 0:
-        return []
     dirs = [[0,1], [1,0], [0,-1], [-1,0]]
     list = []
     for [dirX, dirY] in dirs:
-        newX = node.position.x + dirX
-        newY = node.position.y + dirY
+        newX, newY = node.position.x + dirX, node.position.y + dirY
         if newX >= 0 and newY >= 0 and newX < len(grid) and newY < len(grid[0]) and grid[newX][newY].passable:
             list.append(grid[newX][newY])
     return list
