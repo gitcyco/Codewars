@@ -90,7 +90,6 @@ class Warrior {
   #currentRank = 0;
   #listOfAchievements = [];
 
-  constructor() {}
   training(arr) {
     let [type, exp, min] = arr;
     if (this.#currentLevel < min) return "Not strong enough";
@@ -101,12 +100,12 @@ class Warrior {
   battle(enemyLevel) {
     let myRank = this.#getRank(this.#currentLevel);
     let enemyRank = this.#getRank(enemyLevel);
-    if (enemyLevel < 1 || enemyLevel > 100) return "Invalid level";
     let diff = enemyLevel - this.#currentLevel;
+    if (enemyLevel < 1 || enemyLevel > 100) return "Invalid level";
+    if (enemyRank - myRank > 0 && diff >= 5) return "You've been defeated";
     if (diff === 0) this.#setExperience(10);
     else if (diff === -1) this.#setExperience(5);
     else if (diff < -1) this.#setExperience(0);
-    else if (enemyRank - myRank > 0 && diff >= 5) return "You've been defeated";
     else this.#setExperience(20 * diff * diff);
     if (diff < -1) return "Easy fight";
     if (diff === 0 || diff === -1) return "A good fight";
