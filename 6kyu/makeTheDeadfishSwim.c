@@ -20,6 +20,27 @@
 
 int *parse(const char *program)
 {
+    size_t len = strlen(program);
+    int mem = 0;
+    int arrIdx = 0;
+    int *array = malloc(sizeof(int) * len);
+    for (size_t i = 0; i < len; i++)
+    {
+        if (program[i] == 'i')
+            mem++;
+        else if (program[i] == 'd')
+            mem--;
+        else if (program[i] == 's')
+            mem *= mem;
+        else if (program[i] == 'o')
+            array[arrIdx++] = mem;
+    }
+    return array;
+}
+
+// Using switch/case, a bit long:
+int *parse_switch(const char *program)
+{
     // return a heap-allocated int array
     // its length shall be at least equal to
     // the count of 'o' commands in the program
