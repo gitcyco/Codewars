@@ -29,14 +29,14 @@
 function countDistricts(city) {
   let nbDistricts = 0;
   const seen = {};
-  for (let path of Object.keys(city)) {
+  for (const path of Object.keys(city)) {
     if (!seen[path]) nbDistricts++;
     const queue = [path];
     while (queue.length > 0) {
-      let cur = queue.pop();
-      let adj = city[cur];
+      const cur = queue.pop();
+      const adj = city[cur];
       seen[cur] = true;
-      for (let a of adj) {
+      for (const a of adj) {
         if (!seen[a]) queue.push(a);
       }
     }
