@@ -43,3 +43,18 @@ function countDistricts(city) {
   }
   return nbDistricts;
 }
+
+// Alternate, a bit shorter
+function countDistricts_reduce(city, seen = {}) {
+  return Object.keys(city).reduce((dist, path) => {
+    if (!seen[path]) dist++;
+    const queue = [path];
+    while (queue.length > 0) {
+      const cur = queue.pop();
+      const adj = city[cur];
+      seen[cur] = true;
+      adj.forEach((a) => a in seen || queue.push(a));
+    }
+    return dist;
+  }, 0);
+}
