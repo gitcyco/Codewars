@@ -31,14 +31,14 @@ function validateBattlefield(field) {
     [-1, 1],
   ];
   const seen = {};
-  let ships = [];
-  let xLen = (yLen = field.length);
-  const walk = (node, ship, queue) => {
+  const ships = [];
+  const xLen = (yLen = field.length);
+  const walk = (node, ship) => {
     seen[node] = true;
     ship.push(node);
     for (let [dirX, dirY] of dirs) {
-      let [xTmp, yTmp] = node;
-      let [x, y] = [xTmp + dirX, yTmp + dirY];
+      const [xTmp, yTmp] = node;
+      const [x, y] = [xTmp + dirX, yTmp + dirY];
       if (
         y >= 0 &&
         y < yLen &&
@@ -47,7 +47,7 @@ function validateBattlefield(field) {
         field[y][x] === 1 &&
         !seen[[x, y]]
       ) {
-        walk([x, y], ship, queue);
+        walk([x, y], ship);
       }
     }
     return ship;
@@ -55,7 +55,7 @@ function validateBattlefield(field) {
   for (let y = 0; y < field.length; y++) {
     for (let x = 0; x < field.length; x++) {
       if (field[y][x] === 1 && !seen[[x, y]]) {
-        let ship = walk([x, y], []);
+        const ship = walk([x, y], []);
         ships.push(ship);
       }
     }
@@ -80,6 +80,6 @@ function validateShips(ships) {
 function isAligned(ship) {
   if (ship.length === 1) return true;
   const [start] = ship;
-  let [x, y] = start;
+  const [x, y] = start;
   return ship.every((e) => e[0] === x) || ship.every((e) => e[1] === y);
 }
