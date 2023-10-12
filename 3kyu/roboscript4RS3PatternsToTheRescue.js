@@ -141,7 +141,7 @@ function execute(code) {
     return mapped.map((e) => e.join("")).join("\r\n");
   } catch (error) {
     //     console.log("ERROR:", error);
-    throw error;
+    throw new Error(error);
   }
 }
 
@@ -163,7 +163,7 @@ function evaluate(ast, path, curDir, globalScope) {
         curDir = evaluate(item, path, curDir, globalScope);
       } else if (item.type === "functionCall") {
         if (!globalScope[item.call])
-          throw TypeError(`${item.call} is not defined`);
+          throw new TypeError(`${item.call} is not defined`);
         globalScope[item.call].invoked++;
         if (globalScope[item.call].invoked > 255)
           throw new Error("Infinite recursion detected");
@@ -243,7 +243,7 @@ const parseCode = (tokens, globalScope) => {
     const exp = [];
     if (tokens.length && isNum(peek(tokens).value)) {
       obj.ident = "P" + pop(tokens).value;
-    } else throw TypeError("Invalid function definition");
+    } else throw new TypeError("Invalid function definition");
     while (!isFuncDefEnd(peek(tokens).value)) {
       exp.push(parseCode(tokens, globalScope));
     }
@@ -251,7 +251,7 @@ const parseCode = (tokens, globalScope) => {
     obj.code = exp;
     obj.invoked = 0;
     if (globalScope[obj.ident])
-      throw TypeError(`${obj.ident} is already defined`);
+      throw new TypeError(`${obj.ident} is already defined`);
     globalScope[obj.ident] = obj;
     return "";
     //     return obj;
@@ -263,7 +263,7 @@ const parseCode = (tokens, globalScope) => {
       obj.count = 1;
       obj.call = func;
       //       obj.code = globalScope[func].code;
-    } else throw TypeError("Invalid function call syntax");
+    } else throw new TypeError("Invalid function call syntax");
     return obj;
   }
   if (isOpenParen(token.value)) {
