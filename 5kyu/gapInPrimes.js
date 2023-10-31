@@ -41,7 +41,22 @@
 //     You can see more examples of return in Sample Tests.
 //
 // Answer:
+
+// just moving values
 function gap(g, m, n) {
+  let nums = [-Infinity, -Infinity];
+  for (let i = m; i <= n; i++) {
+    if (isPrime(i)) {
+      if (nums[1] - nums[0] === g) return nums;
+      nums[0] = nums[1];
+      nums[1] = i;
+    }
+  }
+  return null;
+}
+
+// using shift/push
+function gap_s(g, m, n) {
   let nums = [-Infinity, -Infinity];
   for (let i = m; i <= n; i++) {
     if (isPrime(i)) {
