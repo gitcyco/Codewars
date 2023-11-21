@@ -28,6 +28,6 @@
 function abbreviate(string) {
   return string.replace(/[a-z]{4,}/gi, (e) => {
     let len = e.length;
-    return e[0] + e.slice(1, len - 1).length + e[len - 1];
+    return e[0] + (len - 2) + e[len - 1];
   });
 }
