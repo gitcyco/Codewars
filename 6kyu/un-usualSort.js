@@ -37,7 +37,7 @@ function unusualSort(arr) {
       if (Number.isInteger(a)) return -1;
       return 1;
     }
-    return +a - +b;
+    return a - b;
   });
   return strings.concat(nums);
 }
