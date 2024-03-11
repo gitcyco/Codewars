@@ -22,13 +22,13 @@
 //
 // Answer:
 function isValidIP(str) {
+  console.log(str);
   let parts = str.split(".");
   return (
     parts.length === 4 &&
     parts.every(
       (n) =>
-        !/^0\d+/.test(n) &&
-        /^\d+$/.test(n) &&
+        /^[1-9][0-9]{0,3}$|^[0-9]$/.test(n) &&
         parseInt(n) < 256 &&
         parseInt(n) >= 0
     )
