@@ -59,13 +59,14 @@ class VendingMachine {
     this.money = +money;
   }
   vend(code, money) {
+    console.log(typeof money, money);
     code = code.toUpperCase();
     if (code in this.items) {
       let item = this.items[code];
       if (money < item.price) return "Not enough money!";
       if (item.qty < 1) return `${item.name}: Out of stock!`;
       let msg = `Vending ${item.name}`;
-      if (money !== item.price) {
+      if (+money !== item.price) {
         let change = +money - item.price;
         msg += ` with ${change.toFixed(2)} change.`;
         this.money -= change;
