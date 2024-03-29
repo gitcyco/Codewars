@@ -31,7 +31,6 @@ function toBrainfuck_basic(str) {
 
 // Using relative addition/subtraction from previous value:
 function toBrainfuck_alt(str) {
-  let chunk = 10;
   let out = "";
   let prev = 0;
 
