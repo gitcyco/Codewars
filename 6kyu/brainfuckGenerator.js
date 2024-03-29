@@ -11,7 +11,7 @@
 // If we execute that code, we would get "Hello World!" as the output.
 //
 // Answer:
-function toBrainfuck(str) {
+function toBrainfuck_basic(str) {
   let chunk = 10;
   let out = "";
 
@@ -27,4 +27,47 @@ function toBrainfuck(str) {
     out += ">" + "+".repeat(rem) + ".";
   }
   return out;
+}
+
+// Using relative addition/subtraction from previous value:
+function toBrainfuck_alt(str) {
+  let chunk = 10;
+  let out = "";
+  let prev = 0;
+
+  for (let c of str) {
+    let code = c.charCodeAt(0);
+    if (code >= prev) {
+      out = add(out, code - prev);
+    } else if (code < prev) {
+      out = sub(out, prev - code);
+    }
+    prev = code;
+    out += ".<";
+  }
+  return out;
+}
+
+function add(tape, num) {
+  let chunk = 15;
+  let chunks = Math.floor(num / chunk);
+  let rem = num % chunk;
+  if (chunks > 0) {
+    tape += "+".repeat(chunk);
+    tape += "[>" + "+".repeat(chunks) + "<-]";
+  }
+  tape += ">" + "+".repeat(rem);
+  return tape;
+}
+
+function sub(tape, num) {
+  let chunk = 15;
+  let chunks = Math.floor(num / chunk);
+  let rem = num % chunk;
+  if (chunks > 0) {
+    tape += "+".repeat(chunk);
+    tape += "[>" + "-".repeat(chunks) + "<-]";
+  }
+  tape += ">" + "-".repeat(rem);
+  return tape;
 }
