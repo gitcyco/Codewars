@@ -22,5 +22,4 @@ const calculate = (s) =>
   s
     .replace(/\s/g, "")
     .split("+")
-    .map(Number)
-    .reduce((a, e) => a + e, 0);
+    .reduce((a, e) => +e + a, 0);
