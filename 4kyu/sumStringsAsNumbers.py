@@ -29,3 +29,19 @@ def sum_strings(a, b):
     total = re.sub("^0+", "", ("1" if carry > 0 else "") + total[::-1])
     
     return total if len(total) > 0 else "0"
+
+# zfill the strings:
+import re
+
+def sum_strings_zfill(a, b):
+    length = len(a) if len(a) > len(b) else len(b)
+    a, b = a.zfill(length)[::-1], b.zfill(length)[::-1]
+    carry = 0
+    total = ""
+    for i in range(0, length):
+        sum = carry + int(a[i]) + int(b[i])
+        total += str(sum % 10)
+        carry = 1 if sum > 9 else 0
+    total = re.sub("^0+", "", ("1" if carry > 0 else "") + total[::-1])
+    
+    return total if len(total) > 0 else "0"
