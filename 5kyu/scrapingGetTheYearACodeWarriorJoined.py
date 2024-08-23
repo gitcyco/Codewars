@@ -18,10 +18,8 @@ def get_member_since(username):
     with urllib.request.urlopen(url) as response:
         html = response.read()
         soup = BeautifulSoup(html, 'html.parser')
-        divs = soup.find_all(filter_tags, class_="stat")
-        for div in divs:
-            if div.b.string == "Member Since:":
-                return div.b.next_sibling
+        divs = soup.find(filter_tags, class_="stat")
+        return divs.b.next_sibling
 
 def filter_tags(tag):
     return tag.b and tag.b.string == "Member Since:"
