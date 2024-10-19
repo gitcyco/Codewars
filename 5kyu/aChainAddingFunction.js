@@ -27,7 +27,16 @@
 // We can assume any number being passed in will be valid whole number.
 //
 // Answer:
+
+// Much shorter:
 function add(n) {
+  let fn = (a) => add(n + a);
+  fn.toString = () => n;
+  return fn;
+}
+
+// OG submission
+function add_og(n) {
   let stored = n;
   let fn = (a) => {
     stored += a;
