@@ -18,7 +18,7 @@
 // Answer:
 export function isAllPossibilities(x: number[]): boolean {
   const munged: number[] = [...new Set(x)].filter((e: number) => e >= 0);
-  const sum: number = Math.floor((x.length - 1) * (x.length) / 2);
+  const sum: number = (x.length - 1) * x.length / 2;
   let val: number = munged.reduce((a: number, e: number) => a + e,0);
   return x.length === munged.length && sum === val;
 }
