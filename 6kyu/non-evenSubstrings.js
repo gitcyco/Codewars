@@ -17,3 +17,7 @@ function solve(s) {
   }
   return count;
 }
+
+// one liner:
+const solve_one = (s) =>
+  [...s].reduce((a, e, i) => (+e % 2 !== 0 ? a + i + 1 : a), 0);
