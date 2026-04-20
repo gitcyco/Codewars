@@ -63,13 +63,13 @@ def find_characters(matrix):
     counts = dict(Counter(matrix))
     counts.pop('\n', None)
     counts = dict(sorted(counts.items(), key=lambda item: item[1]))
-    min = None
+    minval = None
     output = ""
     for key, value in counts.items():
-        if min == None or value < min:
-            min = value
+        if minval == None or value < minval:
+            minval = value
             output = key
-        elif value == min:
+        elif value == minval:
             output = output + key
         else:
             output = "".join(sorted(output))
